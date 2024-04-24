@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75143c8a82f6ee145bc07563e892dd33, type: 3}
+  m_Name: Maiz
+  m_EditorClassIdentifier: 
+  plantName: Maiz
+  plantStages:
+  - {fileID: -1177527519, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: -295653699, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: -982575275, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: 1232162110, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: -1631632254, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  timeBtwStages: 10
+  timeNormal: 0
+  timeSlowed: 20
+  timeSpeedUp: 5
+  cantidad: 0
+  icon: {fileID: 992405249, guid: b7a0242256fd2b245aa079fa210f5446, type: 3}
+  plantRender: {fileID: 0}
+  itemVenta: {fileID: 11400000, guid: a4c5503c713a93943b284b4e79a41085, type: 2}

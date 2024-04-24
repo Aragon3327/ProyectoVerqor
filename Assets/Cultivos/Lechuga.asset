@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75143c8a82f6ee145bc07563e892dd33, type: 3}
+  m_Name: Lechuga
+  m_EditorClassIdentifier: 
+  plantName: Lechuga
+  plantStages:
+  - {fileID: 902520406, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: 1650997705, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: 644109829, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  - {fileID: 730679557, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
+  timeBtwStages: 10
+  cantidad: 0
+  icon: {fileID: -1336237196, guid: b7a0242256fd2b245aa079fa210f5446, type: 3}
+  plantRender: {fileID: 0}
+  itemVenta: {fileID: 11400000, guid: 5e42f361449f4584995eb5848cfe3c16, type: 2}
