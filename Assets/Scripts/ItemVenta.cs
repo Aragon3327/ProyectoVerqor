@@ -12,5 +12,12 @@ public class ItemVenta : ScriptableObject
     public bool insecticida;
     public bool fertilizante;
     public int precioInicial;
+    public int precioInc;
+    
+
+    public ItemVenta()
+    {
+        precioInc = precioInicial;
+    }
 }
 

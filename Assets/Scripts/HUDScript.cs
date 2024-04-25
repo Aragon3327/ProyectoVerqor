@@ -70,7 +70,7 @@ public class HUDScript : MonoBehaviour
 
         DisplayTime(tiempoCiclo);
 
-        if(numCiclos > 2){
+        if(numCiclos > 10){
             finalizado = true;
             panelFinal.SetActive(true);
             Time.timeScale = (finalizado) ? 0 : 1;

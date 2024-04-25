@@ -19,9 +19,8 @@ MonoBehaviour:
   - {fileID: 867719751, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
   - {fileID: 260873789, guid: 18cac9923261c6343b2ce9a44fd9b3dc, type: 3}
   timeBtwStages: 10
-  timeNormal: 0
-  timeSlowed: 0
-  timeSpeedUp: 0
+  timeSlowed: 15
+  timeSpeedUp: 5
   cantidad: 0
   icon: {fileID: 1634610808, guid: b7a0242256fd2b245aa079fa210f5446, type: 3}
   plantRender: {fileID: 0}

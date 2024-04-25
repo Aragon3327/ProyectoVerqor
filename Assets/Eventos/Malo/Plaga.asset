@@ -17,8 +17,18 @@ MonoBehaviour:
   descripcion: Siniestro de Plaga
   eventoImg: {fileID: 0}
   cantidad: 0
-  eventType: Malo
+  eventType: MaloPlaga
   seguroAplicable: Pesticida
   ganancia: 0
   perdida: 0
   perdidaSeguro: 0
+  itemsV:
+  - {fileID: 11400000, guid: d94b28e27c9d5463ba9498fe77c64b53, type: 2}
+  - {fileID: 11400000, guid: 442db06e913d204449873e28c1576e4f, type: 2}
+  - {fileID: 11400000, guid: 3107f094559ed83479d6a83a55cc346c, type: 2}
+  - {fileID: 11400000, guid: 2dbb6e6eb2039466693f1458b55615f8, type: 2}
+  - {fileID: 11400000, guid: 10e621ce90c2d4bf08fbd57932bde343, type: 2}
+  - {fileID: 11400000, guid: 9585079fd4251174eb03d1ac01e621e3, type: 2}
+  - {fileID: 11400000, guid: 5e42f361449f4584995eb5848cfe3c16, type: 2}
+  - {fileID: 11400000, guid: a4c5503c713a93943b284b4e79a41085, type: 2}
+  - {fileID: 11400000, guid: 6dd17d6e02fc2d441b8e42885865653c, type: 2}

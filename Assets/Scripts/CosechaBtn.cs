@@ -12,7 +12,7 @@ public class CosechaBtn : MonoBehaviour
     private void Awake()
     {
         precioText = transform.GetChild(0).GetComponent<TMP_Text>();
-        precioText.text = "$" + itemV.precioInicial.ToString();
+        precioText.text = "$" + itemV.precioInc.ToString();
     }
 
     public void vendeCosecha()
@@ -25,7 +25,7 @@ public class CosechaBtn : MonoBehaviour
                 {
                     playerInventory.instance.slots[i].GetComponent<Item>().itemVenta = null;
                     playerInventory.instance.slots[i].GetComponent<Image>().enabled = false;
-                    playerStats.instance.ganancia += itemV.precioInicial;
+                    playerStats.instance.ganancia += itemV.precioInc;
                 }
             }
         }

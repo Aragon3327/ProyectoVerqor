@@ -20,14 +20,24 @@ public class EventData : ScriptableObject
     public float perdida;
     public float perdidaSeguro;
 
+    
+    // public GameObject[] cosechas;
+
+    public ItemVenta[] itemsV;
+
     public void ApplyEvent(HUDScript seguro)
     {
         if (eventType == "Bueno"){
             ApplyGoodEvent();
         }
+        else if (eventType == "BuenoSubioPrecio")
+        {
+            ApplySubioPrecioEvent();
+        }
         else if (eventType == "Malo"){
             ApplyBadEvent(seguro);
         }
+        
     }
 
     public void ApplyGoodEvent()
@@ -60,6 +70,15 @@ public class EventData : ScriptableObject
         {
             cantidad = (int)(playerStats.instance.ganancia * perdida);
             playerStats.instance.ganancia -= (int)(playerStats.instance.ganancia * perdida);
+        }
+    }
+
+    public void ApplySubioPrecioEvent()
+    {
+        // Aumentar el precio de la cosecha
+        foreach (ItemVenta item in itemsV)
+        {
+            item.precioInc += (int)(item.precioInc * 0.1);
         }
     }
 }
