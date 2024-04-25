@@ -9,6 +9,12 @@ public class HUDScript : MonoBehaviour
     public TMP_Text gananciaText;
     public TMP_Text deudaText;
     public TMP_Text tiempoText;
+    public TMP_Text ingresoFinal;
+    public TMP_Text deudaFinal;
+    public TMP_Text gananciaFinal;
+    public TMP_Text win;
+    public TMP_Text lose;
+    public TMP_Text neutral;
 
     public WeatherSystem clima;
     public EventManager2 evento;
@@ -20,6 +26,8 @@ public class HUDScript : MonoBehaviour
     public bool seguroCoyoteUsado = false;
 
     public bool seguroBancoUsado = false;
+    public int numCiclos = 0;
+    public bool finalizado = false;
 
     void Start()
     {
@@ -29,6 +37,7 @@ public class HUDScript : MonoBehaviour
     public UnityEngine.UI.Image Ver;
     public UnityEngine.UI.Image Coy;    
     public UnityEngine.UI.Image Ban;
+    public GameObject panelFinal;
 
     [SerializeField] private GameObject avisoFinanciamiento;
     [SerializeField] private GameObject avisoSeguro;
@@ -45,6 +54,10 @@ public class HUDScript : MonoBehaviour
         avisoFinanciamiento.SetActive(false);
         avisoSeguro.SetActive(false);
         avisoSeguroCoyote.SetActive(false);
+        panelFinal.SetActive(false);
+        win.enabled = false;
+        lose.enabled = false;
+        neutral.enabled = false;
     }
 
     void FixedUpdate()
@@ -56,6 +69,25 @@ public class HUDScript : MonoBehaviour
         deudaText.SetText(deuda.ToString());
 
         DisplayTime(tiempoCiclo);
+
+        if(numCiclos > 2){
+            finalizado = true;
+            panelFinal.SetActive(true);
+            Time.timeScale = (finalizado) ? 0 : 1;
+            ingresoFinal.SetText(ganancia.ToString());
+            deudaFinal.SetText(deuda.ToString());
+            gananciaFinal.SetText((ganancia - deuda).ToString());
+            if((ganancia - deuda) > 0){
+                win.enabled = true;
+            }
+            else if ((ganancia - deuda) < 0){
+                lose.enabled = true;
+            }
+            else{
+                neutral.enabled = true;
+            }
+        }
+
         if (tiempoCiclo > 0)
         {
             tiempoCiclo -= Time.deltaTime;
@@ -77,6 +109,8 @@ public class HUDScript : MonoBehaviour
         else
         {
             tiempoCiclo = tiempoCiclo2;
+            numCiclos++;
+            Debug.Log(numCiclos);
             clima.ChangeWeather(); // Cambiar clima cada ciclo
         }
     }

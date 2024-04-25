@@ -14,9 +14,10 @@ public class WeatherSystem : MonoBehaviour
     public GameObject AnimRain;
     public UnityEngine.UI.Image oscuro;
     public UnityEngine.UI.Image claro;
-
-    public static WeatherSystem instance;
-
+    public GameObject sombrero;
+    public GameObject sombrerov;
+    public GameObject sombreroc;
+    public GameObject sombrerob;
     public enum WeatherType
     {
         sequia,
@@ -32,11 +33,6 @@ public class WeatherSystem : MonoBehaviour
         //ChangeWeather();
     } */
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
     public void ChangeWeather()
     {
         int randomWeather = UnityEngine.Random.Range(0, 3);
@@ -48,6 +44,10 @@ public class WeatherSystem : MonoBehaviour
         claro.enabled = false;
         //No se muestra en la pantalla la animacion de lluvia
         AnimRain.SetActive(false);
+        sombrero.SetActive(false);
+        sombrerov.SetActive(false);
+        sombreroc.SetActive(false);
+        sombrerob.SetActive(false);
 
 
         switch (currentWeather)
@@ -62,6 +62,10 @@ public class WeatherSystem : MonoBehaviour
                 lluvia.enabled = true;
                 oscuro.enabled = true;
                 AnimRain.SetActive(true);
+                sombrero.SetActive(true);
+                sombrerov.SetActive(true);
+                sombreroc.SetActive(true);
+                sombrerob.SetActive(true);
                 break;
             case WeatherType.buenClima:
                 // Debug.Log("El clima es nublado");

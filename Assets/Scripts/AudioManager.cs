@@ -12,7 +12,10 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip menubackground;
     public AudioClip gamebackground;
+    public AudioClip storyBackground;
     public AudioClip walk;
+    public AudioClip papel;
+    public AudioClip buttonsound;
 
     private static AudioManager instance = null;
 
@@ -27,6 +30,10 @@ public class AudioManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Menu")
         {
             musicSource.clip = menubackground;
+        }
+        else if (SceneManager.GetActiveScene().name == "Story")
+        {
+            musicSource.clip = storyBackground;
         }
         else if (SceneManager.GetActiveScene().name == "Modificado")
         {
@@ -50,6 +57,10 @@ public class AudioManager : MonoBehaviour
         if (scene.name == "Menu")
         {
             musicSource.clip = menubackground;
+        }
+        else if (scene.name == "Story")
+        {
+            musicSource.clip = storyBackground;
         }
         else if (scene.name == "Modificado")
         {
