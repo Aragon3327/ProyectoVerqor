@@ -75,10 +75,11 @@ public class EventData : ScriptableObject
 
     public void ApplySubioPrecioEvent()
     {
+         
         // Aumentar el precio de la cosecha
         foreach (ItemVenta item in itemsV)
         {
-            item.precioInc += (int)(item.precioInc * 0.1);
+            item.precioInicial += (int)(item.precioInicial * 0.05);
         }
     }
 }

@@ -19,5 +19,10 @@ public class ItemVenta : ScriptableObject
     {
         precioInc = precioInicial;
     }
+
+    /* void Awake()
+    {
+        precioInc = precioInicial;
+    } */
 }
 

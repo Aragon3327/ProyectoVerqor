@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Plaga
   m_EditorClassIdentifier: 
   eventName: Plaga
-  eventTypeImg: {fileID: 0}
+  eventTypeImg: {fileID: 2631046323181635569, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   descripcion: Siniestro de Plaga
-  eventoImg: {fileID: 0}
+  eventoImg: {fileID: -1257618989, guid: e582dd6f7cf85bd448cd3129b3c39e04, type: 3}
   cantidad: 0
   eventType: MaloPlaga
   seguroAplicable: Pesticida

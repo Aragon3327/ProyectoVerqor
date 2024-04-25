@@ -17,8 +17,9 @@ MonoBehaviour:
   descripcion: "El precio de tu producto subi\xF3 este ciclo"
   eventoImg: {fileID: 384162750, guid: e582dd6f7cf85bd448cd3129b3c39e04, type: 3}
   cantidad: 0
-  eventType: Bueno
+  eventType: BuenoSubioPrecio
   seguroAplicable: 
   ganancia: 0.05
   perdida: 0
   perdidaSeguro: 0
+  itemsV: []
