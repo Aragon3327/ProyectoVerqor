@@ -20,9 +20,6 @@ public class EventData : ScriptableObject
     public float perdida;
     public float perdidaSeguro;
 
-    
-    // public GameObject[] cosechas;
-
     public ItemVenta[] itemsV;
 
     public void ApplyEvent(HUDScript seguro)
@@ -79,7 +76,7 @@ public class EventData : ScriptableObject
         // Aumentar el precio de la cosecha
         foreach (ItemVenta item in itemsV)
         {
-            item.precioInicial += (int)(item.precioInicial * 0.05);
+            item.precioInc += (int)(item.precioInc * 0.05);
         }
     }
 }

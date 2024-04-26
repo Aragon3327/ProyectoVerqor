@@ -13,16 +13,11 @@ public class ItemVenta : ScriptableObject
     public bool fertilizante;
     public int precioInicial;
     public int precioInc;
-    
 
-    public ItemVenta()
+
+    void OnEnable()
     {
         precioInc = precioInicial;
     }
-
-    /* void Awake()
-    {
-        precioInc = precioInicial;
-    } */
 }
 

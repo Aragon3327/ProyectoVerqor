@@ -22,3 +22,4 @@ MonoBehaviour:
   ganancia: 0.08
   perdida: 0
   perdidaSeguro: 0
+  itemsV: []
