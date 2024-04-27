@@ -57,6 +57,12 @@ public class CropManager : MonoBehaviour
             playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
             playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
             playerInventory.instance.isFull[ItemPos] = false;
+            
+            foreach (var btnAdicional in adicionales.btnsAdicionales)
+            {
+                btnAdicional.GetComponent<Image>().sprite = adicionales.deselectImg;
+            }
+            
             menu.SetActive(false); // Desactivar menu
         }
     }
@@ -72,7 +78,7 @@ public class CropManager : MonoBehaviour
             {   
                 CropObj.Cosechar(false);
 
-                adicionales.fertilizanteSelec = false;
+                CropObj.fertilizanteSelec = false;
                 
                 for(int i = 0;i < playerInventory.instance.slots.Length;i++){
                     if(!playerInventory.instance.isFull[i]){

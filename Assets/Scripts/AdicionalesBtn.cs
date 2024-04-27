@@ -7,10 +7,6 @@ public class AdicionalesBtn : MonoBehaviour
 {
     bool hasItem = false;
 
-    public bool fertilizanteSelec = false;
-    public bool abonoSelec = false;
-    public bool insecticidaSelec = false;
-
     public bool selected = false;
 
     CrecimientoParalelo selectedCrop;
@@ -159,25 +155,34 @@ public class AdicionalesBtn : MonoBehaviour
             }
         }
 
-        /* if (hasItem)
+        if (hasItem)
         {
-            if (!abonoSelec)
+            if (fm.selectCrop != null)
             {
-                abonoSelec = true;
-                btnsAdicionales[1].GetComponent<Image>().sprite = selectImg;
+                selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+                if (!selectedCrop.abonoSelec)
+                {
+                    selectedCrop.abonoSelec = true;
+                    btnsAdicionales[1].GetComponent<Image>().sprite = selectImg;
+                }
+                else
+                {
+                    selectedCrop.abonoSelec = false;
+                    btnsAdicionales[1].GetComponent<Image>().sprite = deselectImg;
+                }
             }
-            else
+            else if (fm.selectCrop == null)
             {
-                abonoSelec = false;
-                btnsAdicionales[1].GetComponent<Image>().sprite = deselectImg;
+                // Mostrar panel que no tiene cultivo seleccionado
+                notificacion[1].SetActive(true);
             }
         }
         else
         {
-            // Show a message to the player
-            // Debug.Log("No tienes Abono en tu inventario");
-            notificacion.SetActive(true);
-        } */
+            // Mostrar panel que no tiene fertilizante
+            notificacion[0].SetActive(true);
+        }
 
     }
 
@@ -199,25 +204,34 @@ public class AdicionalesBtn : MonoBehaviour
             }
         }
 
-        /* if (hasItem)
+        if (hasItem)
         {
-            if (!insecticidaSelec)
+            if (fm.selectCrop != null)
             {
-                insecticidaSelec = true;
-                btnsAdicionales[2].GetComponent<Image>().sprite = selectImg;
+                selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+                if (!selectedCrop.insecticidaSelec)
+                {
+                    selectedCrop.insecticidaSelec = true;
+                    btnsAdicionales[2].GetComponent<Image>().sprite = selectImg;
+                }
+                else
+                {
+                    selectedCrop.fertilizanteSelec = false;
+                    btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
+                }
             }
-            else
+            else if (fm.selectCrop == null)
             {
-                insecticidaSelec = false;
-                btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
+                // Mostrar panel que no tiene cultivo seleccionado
+                notificacion[1].SetActive(true);
             }
         }
         else
         {
-            // Show a message to the player
-            // Debug.Log("No tienes Pesticida en tu inventario");
-            notificacion.SetActive(true);
-        } */
+            // Mostrar panel que no tiene fertilizante
+            notificacion[0].SetActive(true);
+        }
     }
 
     public void DesactivarFertilizante()

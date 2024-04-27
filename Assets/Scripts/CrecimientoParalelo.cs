@@ -14,6 +14,8 @@ public class CrecimientoParalelo : MonoBehaviour
     public float timer;
 
     public bool fertilizanteSelec = false;
+    public bool abonoSelec = false;
+    public bool insecticidaSelec = false;
 
     public CropObject selectedCrop;
 
@@ -38,7 +40,7 @@ public class CrecimientoParalelo : MonoBehaviour
                 if (fertilizanteSelec)
                 {
                     // Restar tiempo de cosecha
-                    timer = selectedCrop.timeBtwStages / 2;
+                    timer /= 2;
                 }
 
                 plantStage++;
@@ -61,8 +63,7 @@ public class CrecimientoParalelo : MonoBehaviour
         if (fertilizanteSelec)
         {
             // Restar tiempo de cosecha
-            timer = selectedCrop.timeBtwStages / 2;
-            
+            timer /= 2;            
         }
 
     }
