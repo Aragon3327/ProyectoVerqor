@@ -13,6 +13,7 @@ public class CropManager : MonoBehaviour
     public GameObject menu;
     private CrecimientoParalelo CropObj;
 
+    public AdicionalesBtn adicionales;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,12 @@ public class CropManager : MonoBehaviour
         }
 
         if(fm.isPlanting && hasItem)
-        {            
+        {
+            if (adicionales.fertilizanteSelec)
+            {
+                adicionales.DesactivarFertilizante();
+            }
+
             // Plantar(fm.selectCrop.crop);
             CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
             CropObj.Plantar(fm.selectCrop.crop,true);

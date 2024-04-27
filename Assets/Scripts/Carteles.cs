@@ -8,6 +8,8 @@ public class Proximity : MonoBehaviour
     private bool isPlayerInRange;
     [SerializeField] private GameObject MenuCart;
 
+    public GameObject notificacion;
+
     void Update()
     {        
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
@@ -51,4 +53,8 @@ public class Proximity : MonoBehaviour
         MenuCart.SetActive(false);
     }
 
+    public void OnClickEntendido()
+    {
+        notificacion.SetActive(false);
+    }
 }

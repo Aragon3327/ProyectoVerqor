@@ -19,7 +19,7 @@ public class HUDScript : MonoBehaviour
     public WeatherSystem clima;
     public EventManager2 evento;
 
-    private float tiempoCiclo = 21;
+    private float tiempoCiclo = 30;
     private float tiempoCiclo2;
     private bool prestamoUsado = false;
     public bool seguroVerqorUsado = false;

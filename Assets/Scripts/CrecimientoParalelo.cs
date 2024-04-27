@@ -1,6 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+// using System.Diagnostics;
 using UnityEngine;
 
 public class CrecimientoParalelo : MonoBehaviour
@@ -10,11 +11,13 @@ public class CrecimientoParalelo : MonoBehaviour
     public SpriteRenderer plant;
     
     public int plantStage = 0;
-    float timer;
+    public float timer;
 
     public CropObject selectedCrop;
 
     public WeatherSystem clima;
+
+    public AdicionalesBtn adicionales;
 
 
     // Update is called once per frame
@@ -28,16 +31,12 @@ public class CrecimientoParalelo : MonoBehaviour
             {
                 timer = selectedCrop.timeBtwStages;
 
-                if (clima.currentWeather == WeatherSystem.WeatherType.sequia)
-                {
-                    // Reducir el tiempo entre etapas de crecimiento
-                    timer = selectedCrop.timeSlowed;
+                timeByWeather();                
 
-                }
-                else if (clima.currentWeather == WeatherSystem.WeatherType.inundacion)
+                if (adicionales.fertilizanteSelec)
                 {
-                    // Aumentar el tiempo entre etapas de crecimiento
-                    timer = selectedCrop.timeSpeedUp;
+                    // Restar tiempo de cosecha
+                    timer = selectedCrop.timeBtwStages / 2;
                 }
 
                 plantStage++;
@@ -55,17 +54,7 @@ public class CrecimientoParalelo : MonoBehaviour
         plant.enabled = true;
         timer = selectedCrop.timeBtwStages;
 
-        if (clima.currentWeather == WeatherSystem.WeatherType.sequia)
-        {
-            // Reducir el tiempo entre etapas de crecimiento
-            timer = selectedCrop.timeSlowed;
-
-        }
-        else if (clima.currentWeather == WeatherSystem.WeatherType.inundacion)
-        {
-            // Aumentar el tiempo entre etapas de crecimiento
-            timer = selectedCrop.timeSpeedUp;
-        }
+        timeByWeather();
 
     }
 
@@ -78,5 +67,26 @@ public class CrecimientoParalelo : MonoBehaviour
     void ActualizarPlanta()
     {
         plant.sprite = selectedCrop.plantStages[plantStage];
+    }
+
+    void timeByWeather()
+    {
+        if (clima.currentWeather == WeatherSystem.WeatherType.sequia)
+        {
+            // Reducir el tiempo entre etapas de crecimiento
+            // timer = selectedCrop.timeSlowed;
+            timer = selectedCrop.timeBtwStages * 2;
+
+        }
+        else if (clima.currentWeather == WeatherSystem.WeatherType.inundacion)
+        {
+            // Aumentar el tiempo entre etapas de crecimiento
+            // timer = selectedCrop.timeSpeedUp;
+            timer = selectedCrop.timeBtwStages / 2;
+        }
+        else
+        {
+            timer = selectedCrop.timeBtwStages;
+        }
     }
 }

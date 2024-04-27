@@ -19,4 +19,4 @@ MonoBehaviour:
   insecticida: 0
   fertilizante: 0
   precioInicial: 60
-  precioInc: 0
+  precioInc: 60
