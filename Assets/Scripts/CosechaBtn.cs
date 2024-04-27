@@ -31,6 +31,7 @@ public class CosechaBtn : MonoBehaviour
                 {
                     playerInventory.instance.slots[i].GetComponent<Item>().itemVenta = null;
                     playerInventory.instance.slots[i].GetComponent<Image>().enabled = false;
+                    playerInventory.instance.isFull[i] = false;
                     playerStats.instance.ganancia += itemV.precioInc;
                 }
             }
