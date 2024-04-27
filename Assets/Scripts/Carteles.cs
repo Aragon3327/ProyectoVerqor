@@ -8,7 +8,14 @@ public class Proximity : MonoBehaviour
     private bool isPlayerInRange;
     [SerializeField] private GameObject MenuCart;
 
-    public GameObject notificacion;
+    // public GameObject panelCultivo;
+
+    // public GameObject panelAdicionales;
+
+    public GameObject[] notificacion;
+
+    FarmManager fm;
+    CrecimientoParalelo selectedCrop;
 
     void Update()
     {        
@@ -17,10 +24,12 @@ public class Proximity : MonoBehaviour
             if (!MenuCart.activeSelf)
             {
                 MenuCart.SetActive(true);
+                // panelCultivo.SetActive(true);
             }
             else
             {
-                MenuCart.SetActive(false);
+                // MenuCart.SetActive(false);
+                OnSalirbuttonClicked();
             }
         }
 
@@ -44,17 +53,40 @@ public class Proximity : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             if (MenuCart.activeSelf)
             {
-                MenuCart.SetActive(false); // Cerrar el menú si el jugador sale del rango mientras está abierto
+                // MenuCart.SetActive(false); // Cerrar el menú si el jugador sale del rango mientras está abierto
+                // panelAdicionales.SetActive(false);
+                
+                OnSalirbuttonClicked();
             }
         }
     }
+
+    /* public void OnClickSiguiente()
+    {
+        panelCultivo.SetActive(false);
+        panelAdicionales.SetActive(true);
+    } */
     public void OnSalirbuttonClicked()
     {
         MenuCart.SetActive(false);
+        // panelAdicionales.SetActive(false);
+        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+
+        if(fm.selectCrop != null)
+        {
+            selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+            selectedCrop.fertilizanteSelec = false;
+
+            fm.selectCrop = null;
+            fm.isPlanting = false;
+        }
     }
 
     public void OnClickEntendido()
     {
-        notificacion.SetActive(false);
+        foreach (GameObject notificacion in notificacion)
+        {
+            notificacion.SetActive(false);
+        }
     }
 }

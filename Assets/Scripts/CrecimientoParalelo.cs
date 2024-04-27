@@ -13,6 +13,8 @@ public class CrecimientoParalelo : MonoBehaviour
     public int plantStage = 0;
     public float timer;
 
+    public bool fertilizanteSelec = false;
+
     public CropObject selectedCrop;
 
     public WeatherSystem clima;
@@ -33,7 +35,7 @@ public class CrecimientoParalelo : MonoBehaviour
 
                 timeByWeather();                
 
-                if (adicionales.fertilizanteSelec)
+                if (fertilizanteSelec)
                 {
                     // Restar tiempo de cosecha
                     timer = selectedCrop.timeBtwStages / 2;
@@ -55,6 +57,13 @@ public class CrecimientoParalelo : MonoBehaviour
         timer = selectedCrop.timeBtwStages;
 
         timeByWeather();
+
+        if (fertilizanteSelec)
+        {
+            // Restar tiempo de cosecha
+            timer = selectedCrop.timeBtwStages / 2;
+            
+        }
 
     }
 

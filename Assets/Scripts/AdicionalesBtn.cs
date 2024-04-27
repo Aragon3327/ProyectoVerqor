@@ -5,39 +5,42 @@ using UnityEngine.UI;
 
 public class AdicionalesBtn : MonoBehaviour
 {
+    bool hasItem = false;
+
     public bool fertilizanteSelec = false;
     public bool abonoSelec = false;
     public bool insecticidaSelec = false;
+
+    public bool selected = false;
+
+    CrecimientoParalelo selectedCrop;
+    FarmManager fm;
 
 
     public Button[] btnsAdicionales;
     public Sprite selectImg;
     public Sprite deselectImg;
 
-    public GameObject notificacion;
+    public GameObject[] notificacion;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickFertilizante()
     {
-        
-    }
-
-    public void OnClickFertilizante(){
         // Check if the player has the item in their inventory
-        bool hasItem = false;
-
-        // tiempoCrecimientoOriginal = crecimiento.timer;
-
-        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
-            if(playerInventory.instance.isFull[i]){
-                if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta){
-                    if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Fertilizante"){
+        for (int i = 0; i < playerInventory.instance.slots.Length; i++)
+        {
+            if (playerInventory.instance.isFull[i])
+            {
+                if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta)
+                {
+                    if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Fertilizante")
+                    {
                         hasItem = true;
                         break;
                     }
@@ -45,35 +48,110 @@ public class AdicionalesBtn : MonoBehaviour
             }
         }
 
+        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+
+        /* if (hasItem)
+        {
+            if (!selected)
+            {
+                selected = true;
+                btnsAdicionales[0].GetComponent<Image>().sprite = selectImg;
+
+                if (fm.selectCrop == null)
+                {
+                    fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+                    selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+                    selectedCrop.fertilizanteSelec = selected;
+                }
+            }
+            else
+            {
+                selected = false;
+                btnsAdicionales[0].GetComponent<Image>().sprite = deselectImg;
+
+                if (fm.selectCrop != null)
+                {
+                    selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+                    selectedCrop.fertilizanteSelec = selected;
+                }
+            }
+        }
+        else
+        {
+            // Show a message to the player
+            // Debug.Log("No tienes Fertilizante en tu inventario");
+            notificacion[0].SetActive(true);
+        } */
+
         if (hasItem)
         {
-            if (!fertilizanteSelec){
-                fertilizanteSelec = true;
+            if (fm.selectCrop != null)
+            {
+                selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+                if (!selectedCrop.fertilizanteSelec)
+                {
+                    selectedCrop.fertilizanteSelec = true;
+                    btnsAdicionales[0].GetComponent<Image>().sprite = selectImg;
+                }
+                else
+                {
+                    selectedCrop.fertilizanteSelec = false;
+                    btnsAdicionales[0].GetComponent<Image>().sprite = deselectImg;
+                }
+            }
+            else if (fm.selectCrop == null)
+            {
+                // Mostrar panel que no tiene cultivo seleccionado
+                notificacion[1].SetActive(true);
+            }
+        }
+        else
+        {
+            // Mostrar panel que no tiene fertilizante
+            notificacion[0].SetActive(true);
+        }
+
+
+        /* if (fm.selectCrop != null && hasItem)
+        {
+            selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+            if (!selectedCrop.fertilizanteSelec)
+            {
+                selectedCrop.fertilizanteSelec = true;
                 btnsAdicionales[0].GetComponent<Image>().sprite = selectImg;
             }
-            else{
-                fertilizanteSelec = false;
+            else
+            {
+                selectedCrop.fertilizanteSelec = false;
                 btnsAdicionales[0].GetComponent<Image>().sprite = deselectImg;
             }
         }
-        else{
+        else if (fm.selectCrop == null && !hasItem)
+        {
             // Show a message to the player
-            Debug.Log("No tienes Fertilizante en tu inventario");
-            notificacion.SetActive(true);
+            // Debug.Log("No tienes Fertilizante en tu inventario");
+            notificacion[1].SetActive(true);
         }
+        else
+        {
+            // Mostrar panel que no tiene fertilizante
+            notificacion[0].SetActive(true);
+        } */
     }
 
     public void OnClickAbono()
     {
         // Check if the player has the item in their inventory
-        bool hasItem = false;
-
-        // tiempoCrecimientoOriginal = crecimiento.timer;
-
-        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
-            if(playerInventory.instance.isFull[i]){
-                if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta){
-                    if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Abono"){
+        for (int i = 0; i < playerInventory.instance.slots.Length; i++)
+        {
+            if (playerInventory.instance.isFull[i])
+            {
+                if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta)
+                {
+                    if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Abono")
+                    {
                         hasItem = true;
                         break;
                     }
@@ -81,36 +159,39 @@ public class AdicionalesBtn : MonoBehaviour
             }
         }
 
-        if (hasItem)
+        /* if (hasItem)
         {
-            if (!abonoSelec){
+            if (!abonoSelec)
+            {
                 abonoSelec = true;
                 btnsAdicionales[1].GetComponent<Image>().sprite = selectImg;
             }
-            else{
+            else
+            {
                 abonoSelec = false;
                 btnsAdicionales[1].GetComponent<Image>().sprite = deselectImg;
             }
         }
-        else{
+        else
+        {
             // Show a message to the player
-            Debug.Log("No tienes Abono en tu inventario");
+            // Debug.Log("No tienes Abono en tu inventario");
             notificacion.SetActive(true);
-        }
+        } */
 
     }
 
-    public void OnClickPesticida()
+    public void OnClickInsecticida()
     {
         // Check if the player has the item in their inventory
-        bool hasItem = false;
-
-        // tiempoCrecimientoOriginal = crecimiento.timer;
-
-        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
-            if(playerInventory.instance.isFull[i]){
-                if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta){
-                    if(playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Insecticida"){
+        for (int i = 0; i < playerInventory.instance.slots.Length; i++)
+        {
+            if (playerInventory.instance.isFull[i])
+            {
+                if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta)
+                {
+                    if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == "Insecticida")
+                    {
                         hasItem = true;
                         break;
                     }
@@ -118,39 +199,38 @@ public class AdicionalesBtn : MonoBehaviour
             }
         }
 
-        if (hasItem)
+        /* if (hasItem)
         {
-            if (!insecticidaSelec){
+            if (!insecticidaSelec)
+            {
                 insecticidaSelec = true;
                 btnsAdicionales[2].GetComponent<Image>().sprite = selectImg;
             }
-            else{
+            else
+            {
                 insecticidaSelec = false;
                 btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
             }
         }
-        else{
+        else
+        {
             // Show a message to the player
-            Debug.Log("No tienes Pesticida en tu inventario");
+            // Debug.Log("No tienes Pesticida en tu inventario");
             notificacion.SetActive(true);
-        }
+        } */
     }
-
-    /* public void OnDeselectFertilizante(){
-        crecimiento.timer = tiempoCrecimientoOriginal;
-    } */
 
     public void DesactivarFertilizante()
     {
-        fertilizanteSelec = false;
+        // fertilizanteSelec = false;
         // crecimiento.timer = timerOriginal;
 
         int ItemPos = FindItemPosition("Fertilizante");
 
-        playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
+        playerInventory.instance.slots[ItemPos].GetComponent<Item>().itemVenta = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
         playerInventory.instance.isFull[ItemPos] = false;
-        
+
     }
 
     public void DesactivarAbono()
@@ -163,15 +243,15 @@ public class AdicionalesBtn : MonoBehaviour
         playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
         playerInventory.instance.isFull[ItemPos] = false;
-        
+
     }
 
-    public void DesactivarPesticida()
+    public void DesactivarInsecticida()
     {
         // fertilizanteSelec = false;
         // crecimiento.timer = timerOriginal;
 
-        int ItemPos = FindItemPosition("Pesticida");
+        int ItemPos = FindItemPosition("Insecticida");
 
         playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;

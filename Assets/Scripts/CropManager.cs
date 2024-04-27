@@ -42,15 +42,17 @@ public class CropManager : MonoBehaviour
 
         if(fm.isPlanting && hasItem)
         {
-            if (adicionales.fertilizanteSelec)
-            {
-                adicionales.DesactivarFertilizante();
-            }
+            
 
             // Plantar(fm.selectCrop.crop);
             CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
             CropObj.Plantar(fm.selectCrop.crop,true);
             fm.SelectDeselectCrop(fm.selectCrop);
+
+            if (CropObj.fertilizanteSelec)
+            {
+                adicionales.DesactivarFertilizante();
+            }
 
             playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
             playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
@@ -69,6 +71,8 @@ public class CropManager : MonoBehaviour
             if(CropObj.plantStage == CropObj.selectedCrop.plantStages.Length - 1)
             {   
                 CropObj.Cosechar(false);
+
+                adicionales.fertilizanteSelec = false;
                 
                 for(int i = 0;i < playerInventory.instance.slots.Length;i++){
                     if(!playerInventory.instance.isFull[i]){

@@ -8,7 +8,6 @@ public class CropItem : MonoBehaviour
 {
     public CropObject crop;
     public TextMeshProUGUI nameTxt;
-    public TextMeshProUGUI cantidadTxt;
     public float timeBtwStages;
     public Image icon;
     
@@ -33,7 +32,6 @@ public class CropItem : MonoBehaviour
     void InitializeUI()
     {
         nameTxt.text = crop.plantName;
-        cantidadTxt.text = crop.cantidad.ToString();
         icon.sprite = crop.icon;
         crop.timeBtwStages = timeBtwStages;
         crop.plantRender = plantRenderer;
