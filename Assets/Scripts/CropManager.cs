@@ -15,6 +15,8 @@ public class CropManager : MonoBehaviour
 
     public AdicionalesBtn adicionales;
 
+    public GameObject[] notificacion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +44,6 @@ public class CropManager : MonoBehaviour
 
         if(fm.isPlanting && hasItem)
         {
-            
-
             // Plantar(fm.selectCrop.crop);
             CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
             CropObj.Plantar(fm.selectCrop.crop,true);
@@ -52,6 +52,14 @@ public class CropManager : MonoBehaviour
             if (CropObj.fertilizanteSelec)
             {
                 adicionales.DesactivarFertilizante();
+            }
+            if(CropObj.abonoSelec)
+            {
+                adicionales.DesactivarAbono();
+            }
+            if(CropObj.insecticidaSelec)
+            {
+                adicionales.DesactivarInsecticida();
             }
 
             playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
@@ -65,6 +73,11 @@ public class CropManager : MonoBehaviour
             
             menu.SetActive(false); // Desactivar menu
         }
+        else if (!hasItem)
+        {
+            notificacion[0].SetActive(true);
+            fm.SelectDeselectCrop(fm.selectCrop);
+        }
     }
 
     // Cosechar cultivos si ha terminado de crecer
@@ -76,18 +89,27 @@ public class CropManager : MonoBehaviour
         {
             if(CropObj.plantStage == CropObj.selectedCrop.plantStages.Length - 1)
             {   
-                CropObj.Cosechar(false);
+                // CropObj.Cosechar(false);
 
-                CropObj.fertilizanteSelec = false;
+                // CropObj.fertilizanteSelec = false;
                 
                 for(int i = 0;i < playerInventory.instance.slots.Length;i++){
                     if(!playerInventory.instance.isFull[i]){
+
+                        CropObj.Cosechar(false);
+                        CropObj.fertilizanteSelec = false;
+
                         playerInventory.instance.slots[i].GetComponent<Item>().itemVenta = CropObj.selectedCrop.itemVenta;
                         playerInventory.instance.slots[i].GetComponent<Item>().UpdateVenta();
                         playerInventory.instance.isFull[i] = true;
                         fm.SelectDeselectCrop(fm.selectCrop);
                         menu.SetActive(false); // Desactivar menu
                         break;
+                    }
+                    else
+                    {
+                        // Mostrar panel que no tiene espacio en el inventario
+                        notificacion[1].SetActive(true);
                     }
                 }
             }            

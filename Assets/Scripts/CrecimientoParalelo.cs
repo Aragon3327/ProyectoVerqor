@@ -22,6 +22,7 @@ public class CrecimientoParalelo : MonoBehaviour
     public WeatherSystem clima;
 
     public AdicionalesBtn adicionales;
+    
 
 
     // Update is called once per frame
@@ -99,4 +100,5 @@ public class CrecimientoParalelo : MonoBehaviour
             timer = selectedCrop.timeBtwStages;
         }
     }
+
 }

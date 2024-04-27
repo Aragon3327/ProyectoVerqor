@@ -217,7 +217,7 @@ public class AdicionalesBtn : MonoBehaviour
                 }
                 else
                 {
-                    selectedCrop.fertilizanteSelec = false;
+                    selectedCrop.insecticidaSelec = false;
                     btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
                 }
             }

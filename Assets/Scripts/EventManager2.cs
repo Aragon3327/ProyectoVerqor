@@ -25,7 +25,7 @@ public class EventManager2 : MonoBehaviour
     {
         // Selecciona un evento aleatorio
         // int randomEventIndex = Random.Range(0, eventosPrefabs.Length);
-        int randomEventIndex = 2;
+        int randomEventIndex = 6;
         GameObject randomPrefab = eventosPrefabs[randomEventIndex];
 
         eventPanelParent.gameObject.SetActive(true);       
@@ -53,14 +53,16 @@ public class EventManager2 : MonoBehaviour
             {
                 CrecimientoParalelo crecimiento = objeto.GetComponent<CrecimientoParalelo>();
                 bool isPlanted = crecimiento.isPlanted;
+                bool insecticidaSelec = crecimiento.insecticidaSelec;
 
-                if (isPlanted)
+                if (isPlanted && !insecticidaSelec)
                 {
                     crecimiento.Cosechar(false);
                     crecimiento.isPlanted = false;
                 }
+                crecimiento.insecticidaSelec = false;
             }
-
+            
             eventosPrefabs[6].SetActive(true);
         }
         else

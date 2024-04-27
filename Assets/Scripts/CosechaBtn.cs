@@ -9,6 +9,14 @@ public class CosechaBtn : MonoBehaviour
     public ItemVenta itemV;
     private TMP_Text precioText;
 
+    FarmManager fm;
+    CrecimientoParalelo selectedCrop;
+
+    /* void Start()
+    {
+        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+    } */
+
     private void Awake()
     {
         precioText = transform.GetChild(0).GetComponent<TMP_Text>();
@@ -23,6 +31,10 @@ public class CosechaBtn : MonoBehaviour
 
     public void vendeCosecha()
     {
+        // int precioOriginal = itemV.precioInc;
+
+        // priceByAbono();
+
         for (int i = 0; i < playerInventory.instance.slots.Length; i++)
         {
             if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta)
@@ -33,8 +45,20 @@ public class CosechaBtn : MonoBehaviour
                     playerInventory.instance.slots[i].GetComponent<Image>().enabled = false;
                     playerInventory.instance.isFull[i] = false;
                     playerStats.instance.ganancia += itemV.precioInc;
+
+                    // itemV.precioInc = precioOriginal;
                 }
             }
         }
     }
+
+    /* void priceByAbono()
+    {       
+        // fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+        selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+        if (selectedCrop.abonoSelec)
+        {
+            itemV.precioInc += 100;
+        }
+    } */
 }

@@ -10,11 +10,15 @@ public class CropItem : MonoBehaviour
     public TextMeshProUGUI nameTxt;
     public float timeBtwStages;
     public Image icon;
-    
+
+    public Image btnImage;
+    public TextMeshProUGUI btnText;
 
     public SpriteRenderer plantRenderer;
 
     FarmManager fm;
+
+    public GameObject notificacion;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,25 @@ public class CropItem : MonoBehaviour
     public void SelectCrop()
     {
         fm.SelectDeselectCrop(this);
+
+        /* bool hasItem = false;
+
+        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
+            if(playerInventory.instance.isFull[i]){
+                if(playerInventory.instance.slots[i].GetComponent<Item>().item){
+                    if(playerInventory.instance.slots[i].GetComponent<Item>().item.nombre == fm.selectCrop.crop.plantName){
+                        hasItem = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!hasItem)
+        {
+            notificacion.SetActive(true);
+            fm.SelectDeselectCrop(this);
+        }   */      
     }
 
     void InitializeUI()

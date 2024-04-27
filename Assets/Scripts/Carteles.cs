@@ -8,10 +8,6 @@ public class Proximity : MonoBehaviour
     private bool isPlayerInRange;
     [SerializeField] private GameObject MenuCart;
 
-    // public GameObject panelCultivo;
-
-    // public GameObject panelAdicionales;
-
     public GameObject[] notificacion;
 
     FarmManager fm;
@@ -61,15 +57,9 @@ public class Proximity : MonoBehaviour
         }
     }
 
-    /* public void OnClickSiguiente()
-    {
-        panelCultivo.SetActive(false);
-        panelAdicionales.SetActive(true);
-    } */
     public void OnSalirbuttonClicked()
     {
         MenuCart.SetActive(false);
-        // panelAdicionales.SetActive(false);
         fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
 
         if(fm.selectCrop != null)
