@@ -4,18 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class CosechaBtn : MonoBehaviour
+public class VentaBtn : MonoBehaviour
 {
     public ItemVenta itemV;
     private TMP_Text precioText;
 
-    FarmManager fm;
-    CrecimientoParalelo selectedCrop;
-
-    /* void Start()
-    {
-        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
-    } */
 
     private void Awake()
     {
@@ -31,34 +24,47 @@ public class CosechaBtn : MonoBehaviour
 
     public void vendeCosecha()
     {
-        // int precioOriginal = itemV.precioInc;
-
-        // priceByAbono();
-
         for (int i = 0; i < playerInventory.instance.slots.Length; i++)
         {
             if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta)
             {
                 if (playerInventory.instance.slots[i].GetComponent<Item>().itemVenta.nombre == itemV.nombre)
                 {
+
+                    // playerStats.instance.ganancia += itemV.precioInc;
+
+                    if (!itemV.abono && !itemV.regenerativa)
+                    {
+                        playerStats.instance.ganancia += itemV.precioInc;
+                    }
+                    else if (itemV.abono || itemV.regenerativa)
+                    {
+                        
+                        playerStats.instance.ganancia += itemV.precioInc;
+                        
+                        if (itemV.abono)
+                        {
+                            playerStats.instance.ganancia += itemV.precioAbono;
+                            
+                            itemV.precioAbono = 0;
+                            itemV.abono = false;
+                        }
+
+                        if (itemV.regenerativa)
+                        {
+                            playerStats.instance.ganancia += itemV.precioReg;
+                            
+                            itemV.precioReg = 0;
+                            itemV.regenerativa = false;
+                        }
+                    }
+
                     playerInventory.instance.slots[i].GetComponent<Item>().itemVenta = null;
                     playerInventory.instance.slots[i].GetComponent<Image>().enabled = false;
                     playerInventory.instance.isFull[i] = false;
-                    playerStats.instance.ganancia += itemV.precioInc;
-
-                    // itemV.precioInc = precioOriginal;
                 }
             }
         }
     }
 
-    /* void priceByAbono()
-    {       
-        // fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
-        selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
-        if (selectedCrop.abonoSelec)
-        {
-            itemV.precioInc += 100;
-        }
-    } */
 }

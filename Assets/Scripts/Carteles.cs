@@ -27,7 +27,7 @@ public class Proximity : MonoBehaviour
             }
             else
             {
-                // MenuCart.SetActive(false);
+                MenuCart.SetActive(false);
                 OnSalirbuttonClicked();
             }
         }
@@ -77,6 +77,8 @@ public class Proximity : MonoBehaviour
             adicionales.btnsAdicionales[1].GetComponent<Image>().sprite = adicionales.deselectImg;
             adicionales.btnsAdicionales[2].GetComponent<Image>().sprite = adicionales.deselectImg;
 
+            selectedCrop.agriRegenerativa = false;
+            selectedCrop.agriTradicional = false;
             agri.desactivarAgri();
 
             /* fm.selectCrop = null;

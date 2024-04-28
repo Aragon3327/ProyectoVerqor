@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AdicionalesBtn : MonoBehaviour
 {
-    bool hasItem = false;
+    public bool hasItem = false;
 
     public bool selected = false;
 
@@ -39,6 +39,10 @@ public class AdicionalesBtn : MonoBehaviour
                     {
                         hasItem = true;
                         break;
+                    }
+                    else
+                    {
+                        hasItem = false;
                     }
                 }
             }
@@ -79,7 +83,8 @@ public class AdicionalesBtn : MonoBehaviour
             notificacion[0].SetActive(true);
         } */
 
-        if (hasItem)
+
+        /* if (hasItem)
         {
             if (fm.selectCrop != null)
             {
@@ -102,9 +107,52 @@ public class AdicionalesBtn : MonoBehaviour
                 notificacion[1].SetActive(true);
             }
         }
+        else if (!hasItem)
+        {
+            if (fm.selectCrop == null)
+            {
+                // Show a message to the player
+                // Debug.Log("No tienes Fertilizante en tu inventario");
+                notificacion[0].SetActive(true);
+            }
+            else
+            {
+                // Mostrar panel que no tiene cultivo seleccionado
+                notificacion[1].SetActive(true);
+            }
+
+            // Mostrar panel que no tiene fertilizante
+            notificacion[0].SetActive(true);
+        } */
+
+        if (fm.selectCrop != null && hasItem)
+        {
+            selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+            if (!selectedCrop.fertilizanteSelec)
+            {
+                selectedCrop.fertilizanteSelec = true;
+                btnsAdicionales[0].GetComponent<Image>().sprite = selectImg;
+            }
+            else
+            {
+                selectedCrop.fertilizanteSelec = false;
+                btnsAdicionales[0].GetComponent<Image>().sprite = deselectImg;
+            }
+        }
+        else if (fm.selectCrop != null && !hasItem)
+        {
+            // Mostrar que no tiene item
+            notificacion[0].SetActive(true);
+        }
+        else if (fm.selectCrop == null && hasItem)
+        {
+            // Mostrar que no tiene cultivo seleccionado
+            notificacion[1].SetActive(true);
+        }
         else
         {
-            // Mostrar panel que no tiene fertilizante
+            // Mostrar que no tiene cultivo seleccionado y no tiene item
             notificacion[0].SetActive(true);
         }
 
@@ -151,36 +199,42 @@ public class AdicionalesBtn : MonoBehaviour
                         hasItem = true;
                         break;
                     }
+                    else
+                    {
+                        hasItem = false;
+                    }
                 }
             }
         }
 
-        if (hasItem)
+        if (fm.selectCrop != null && hasItem)
         {
-            if (fm.selectCrop != null)
-            {
-                selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+            selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
 
-                if (!selectedCrop.abonoSelec)
-                {
-                    selectedCrop.abonoSelec = true;
-                    btnsAdicionales[1].GetComponent<Image>().sprite = selectImg;
-                }
-                else
-                {
-                    selectedCrop.abonoSelec = false;
-                    btnsAdicionales[1].GetComponent<Image>().sprite = deselectImg;
-                }
-            }
-            else if (fm.selectCrop == null)
+            if (!selectedCrop.abonoSelec)
             {
-                // Mostrar panel que no tiene cultivo seleccionado
-                notificacion[1].SetActive(true);
+                selectedCrop.abonoSelec = true;
+                btnsAdicionales[1].GetComponent<Image>().sprite = selectImg;
             }
+            else
+            {
+                selectedCrop.abonoSelec = false;
+                btnsAdicionales[1].GetComponent<Image>().sprite = deselectImg;
+            }
+        }
+        else if (fm.selectCrop != null && !hasItem)
+        {
+            // Mostrar que no tiene item
+            notificacion[0].SetActive(true);
+        }
+        else if (fm.selectCrop == null && hasItem)
+        {
+            // Mostrar que no tiene cultivo seleccionado
+            notificacion[1].SetActive(true);
         }
         else
         {
-            // Mostrar panel que no tiene fertilizante
+            // Mostrar que no tiene cultivo seleccionado y no tiene item
             notificacion[0].SetActive(true);
         }
 
@@ -200,36 +254,41 @@ public class AdicionalesBtn : MonoBehaviour
                         hasItem = true;
                         break;
                     }
+                    else{
+                        hasItem = false;
+                    }
                 }
             }
         }
 
-        if (hasItem)
+        if (fm.selectCrop != null && hasItem)
         {
-            if (fm.selectCrop != null)
-            {
-                selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+            selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
 
-                if (!selectedCrop.insecticidaSelec)
-                {
-                    selectedCrop.insecticidaSelec = true;
-                    btnsAdicionales[2].GetComponent<Image>().sprite = selectImg;
-                }
-                else
-                {
-                    selectedCrop.insecticidaSelec = false;
-                    btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
-                }
-            }
-            else if (fm.selectCrop == null)
+            if (!selectedCrop.insecticidaSelec)
             {
-                // Mostrar panel que no tiene cultivo seleccionado
-                notificacion[1].SetActive(true);
+                selectedCrop.insecticidaSelec = true;
+                btnsAdicionales[2].GetComponent<Image>().sprite = selectImg;
             }
+            else
+            {
+                selectedCrop.insecticidaSelec = false;
+                btnsAdicionales[2].GetComponent<Image>().sprite = deselectImg;
+            }
+        }
+        else if (fm.selectCrop != null && !hasItem)
+        {
+            // Mostrar que no tiene item
+            notificacion[0].SetActive(true);
+        }
+        else if (fm.selectCrop == null && hasItem)
+        {
+            // Mostrar que no tiene cultivo seleccionado
+            notificacion[1].SetActive(true);
         }
         else
         {
-            // Mostrar panel que no tiene fertilizante
+            // Mostrar que no tiene cultivo seleccionado y no tiene item
             notificacion[0].SetActive(true);
         }
     }
@@ -241,6 +300,7 @@ public class AdicionalesBtn : MonoBehaviour
 
         int ItemPos = FindItemPosition("Fertilizante");
 
+        hasItem = false;
         playerInventory.instance.slots[ItemPos].GetComponent<Item>().itemVenta = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
         playerInventory.instance.isFull[ItemPos] = false;
@@ -253,7 +313,8 @@ public class AdicionalesBtn : MonoBehaviour
         // crecimiento.timer = timerOriginal;
 
         int ItemPos = FindItemPosition("Abono");
-
+        
+        hasItem = false;
         playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
         playerInventory.instance.isFull[ItemPos] = false;
@@ -267,6 +328,7 @@ public class AdicionalesBtn : MonoBehaviour
 
         int ItemPos = FindItemPosition("Insecticida");
 
+        hasItem = false;
         playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
         playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
         playerInventory.instance.isFull[ItemPos] = false;

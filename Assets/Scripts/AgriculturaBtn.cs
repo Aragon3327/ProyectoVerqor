@@ -8,7 +8,6 @@ public class AgriculturaBtn : MonoBehaviour
     CrecimientoParalelo selectedCrop;
     FarmManager fm;
 
-
     public Button[] btnsAgri;
     public Sprite selectImg;
     public Sprite deselectImg;
@@ -21,7 +20,6 @@ public class AgriculturaBtn : MonoBehaviour
     {
         fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
     }
-
 
     public void OnClickAgriRegenerativa()
     {
@@ -88,19 +86,5 @@ public class AgriculturaBtn : MonoBehaviour
     {
         btnsAgri[0].GetComponent<Image>().sprite = deselectImg;
         btnsAgri[1].GetComponent<Image>().sprite = deselectImg;
-    }
-    
-    bool hasItem()
-    {
-        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
-            if(playerInventory.instance.isFull[i]){
-                if(playerInventory.instance.slots[i].GetComponent<Item>().item){
-                    if(playerInventory.instance.slots[i].GetComponent<Item>().item.nombre == fm.selectCrop.crop.plantName){
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
     }
 }

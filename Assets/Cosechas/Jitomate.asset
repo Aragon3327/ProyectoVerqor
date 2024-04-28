@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Jitomate
   sprite: {fileID: 6783889591727191740, guid: 37528af227a0263458cdc5a4f16ddc03, type: 3}
-  tadicional: 0
+  regenerativa: 0
   abono: 0
   insecticida: 0
   fertilizante: 0
   precioInicial: 70
   precioInc: 70
+  precioAbono: 0
+  precioReg: 0
