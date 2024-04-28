@@ -13,6 +13,9 @@ public class Proximity : MonoBehaviour
     FarmManager fm;
     CrecimientoParalelo selectedCrop;
 
+    public AdicionalesBtn adicionales;
+    public AgriculturaBtn agri;
+
     void Update()
     {        
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
@@ -65,10 +68,20 @@ public class Proximity : MonoBehaviour
         if(fm.selectCrop != null)
         {
             selectedCrop = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
-            selectedCrop.fertilizanteSelec = false;
 
-            fm.selectCrop = null;
-            fm.isPlanting = false;
+            selectedCrop.fertilizanteSelec = false;
+            selectedCrop.abonoSelec = false;
+            selectedCrop.insecticidaSelec = false;
+            
+            adicionales.btnsAdicionales[0].GetComponent<Image>().sprite = adicionales.deselectImg;
+            adicionales.btnsAdicionales[1].GetComponent<Image>().sprite = adicionales.deselectImg;
+            adicionales.btnsAdicionales[2].GetComponent<Image>().sprite = adicionales.deselectImg;
+
+            agri.desactivarAgri();
+
+            /* fm.selectCrop = null;
+            fm.isPlanting = false; */
+            fm.SelectDeselectCrop(fm.selectCrop);
         }
     }
 

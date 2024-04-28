@@ -17,11 +17,15 @@ public class CrecimientoParalelo : MonoBehaviour
     public bool abonoSelec = false;
     public bool insecticidaSelec = false;
 
+    public bool agriRegenerativa = false;
+    public bool agriTradicional = false;
+
     public CropObject selectedCrop;
 
     public WeatherSystem clima;
 
     public AdicionalesBtn adicionales;
+    public AgriculturaBtn agricultura;
     
 
 
@@ -42,6 +46,12 @@ public class CrecimientoParalelo : MonoBehaviour
                 {
                     // Restar tiempo de cosecha
                     timer /= 2;
+                }
+
+                if (agriTradicional)
+                {
+                    // Aumentar tiempo de cosecha
+                    timer += 5;
                 }
 
                 plantStage++;
@@ -65,6 +75,12 @@ public class CrecimientoParalelo : MonoBehaviour
         {
             // Restar tiempo de cosecha
             timer /= 2;            
+        }
+
+        if (agriTradicional)
+        {
+            // Aumentar tiempo de cosecha
+            timer += 5;
         }
 
     }

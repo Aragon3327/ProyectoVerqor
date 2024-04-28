@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -14,8 +15,11 @@ public class CropManager : MonoBehaviour
     private CrecimientoParalelo CropObj;
 
     public AdicionalesBtn adicionales;
+    public AgriculturaBtn agri;
 
     public GameObject[] notificacion;
+
+    public Proximity salir;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +66,8 @@ public class CropManager : MonoBehaviour
                 adicionales.DesactivarInsecticida();
             }
 
+            agri.desactivarAgri();            
+
             playerInventory.instance.slots[ItemPos].GetComponent<Item>().item = null;
             playerInventory.instance.slots[ItemPos].GetComponent<Image>().enabled = false;
             playerInventory.instance.isFull[ItemPos] = false;
@@ -75,6 +81,7 @@ public class CropManager : MonoBehaviour
         }
         else if (!hasItem)
         {
+            desactivarOpciones();
             notificacion[0].SetActive(true);
             fm.SelectDeselectCrop(fm.selectCrop);
         }
@@ -98,6 +105,10 @@ public class CropManager : MonoBehaviour
 
                         CropObj.Cosechar(false);
                         CropObj.fertilizanteSelec = false;
+                        CropObj.insecticidaSelec = false;
+                        
+                        CropObj.agriRegenerativa = false;
+                        CropObj.agriTradicional = false;
 
                         playerInventory.instance.slots[i].GetComponent<Item>().itemVenta = CropObj.selectedCrop.itemVenta;
                         playerInventory.instance.slots[i].GetComponent<Item>().UpdateVenta();
@@ -106,13 +117,37 @@ public class CropManager : MonoBehaviour
                         menu.SetActive(false); // Desactivar menu
                         break;
                     }
-                    else
+                    else if(i == playerInventory.instance.slots.Length - 1)
                     {
                         // Mostrar panel que no tiene espacio en el inventario
                         notificacion[1].SetActive(true);
                     }
                 }
             }            
+        }
+    }
+
+    void desactivarOpciones()
+    {        
+        fm = GameObject.Find("Canvas").GetComponent<FarmManager>();
+
+        if(fm.selectCrop != null)
+        {
+            CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+            CropObj.fertilizanteSelec = false;
+            CropObj.abonoSelec = false;
+            CropObj.insecticidaSelec = false;
+            
+            adicionales.btnsAdicionales[0].GetComponent<Image>().sprite = adicionales.deselectImg;
+            adicionales.btnsAdicionales[1].GetComponent<Image>().sprite = adicionales.deselectImg;
+            adicionales.btnsAdicionales[2].GetComponent<Image>().sprite = adicionales.deselectImg;
+
+            agri.desactivarAgri();
+
+            /* fm.selectCrop = null;
+            fm.isPlanting = false; */
+            fm.SelectDeselectCrop(fm.selectCrop);
         }
     }
 

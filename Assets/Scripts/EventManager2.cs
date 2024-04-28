@@ -24,8 +24,8 @@ public class EventManager2 : MonoBehaviour
     public void ChangeEvent()
     {
         // Selecciona un evento aleatorio
-        // int randomEventIndex = Random.Range(0, eventosPrefabs.Length);
-        int randomEventIndex = 6;
+        int randomEventIndex = Random.Range(0, eventosPrefabs.Length);
+        // int randomEventIndex = 6;
         GameObject randomPrefab = eventosPrefabs[randomEventIndex];
 
         eventPanelParent.gameObject.SetActive(true);       
@@ -60,7 +60,7 @@ public class EventManager2 : MonoBehaviour
                     crecimiento.Cosechar(false);
                     crecimiento.isPlanted = false;
                 }
-                crecimiento.insecticidaSelec = false;
+                // crecimiento.insecticidaSelec = false;
             }
             
             eventosPrefabs[6].SetActive(true);

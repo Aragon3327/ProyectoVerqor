@@ -12,6 +12,8 @@ public class FarmManager : MonoBehaviour
     public Sprite selectImg;
     public Sprite deselectImg;
 
+    
+
     public void SelectDeselectCrop(CropItem newCrop)
     {
         if(selectCrop == newCrop)
