@@ -19,9 +19,9 @@ public class HUDScript : MonoBehaviour
     public WeatherSystem clima;
     public EventManager2 evento;
 
-    private float tiempoCiclo = 30;
+    private float tiempoCiclo = 60;
     private float tiempoCiclo2;
-    private bool prestamoUsado = false;
+    public bool prestamoUsado = false;
     public bool seguroVerqorUsado = false;
     public bool seguroCoyoteUsado = false;
 
@@ -93,7 +93,7 @@ public class HUDScript : MonoBehaviour
             tiempoCiclo -= Time.deltaTime;
 
             // Para llamar a los eventos cada 5 segundos y 15 segundos
-            if (tiempoCiclo <= 10.00 && tiempoCiclo > 9.99)
+            if (prestamoUsado && tiempoCiclo <= 10.00 && tiempoCiclo > 9.99)
             {
                 evento.ChangeEvent();
             }
