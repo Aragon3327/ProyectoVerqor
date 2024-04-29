@@ -30,26 +30,7 @@ public class CropItem : MonoBehaviour
 
     public void SelectCrop()
     {
-        fm.SelectDeselectCrop(this);
-
-        /* bool hasItem = false;
-
-        for (int i = 0; i < playerInventory.instance.slots.Length;i++){
-            if(playerInventory.instance.isFull[i]){
-                if(playerInventory.instance.slots[i].GetComponent<Item>().item){
-                    if(playerInventory.instance.slots[i].GetComponent<Item>().item.nombre == fm.selectCrop.crop.plantName){
-                        hasItem = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (!hasItem)
-        {
-            notificacion.SetActive(true);
-            fm.SelectDeselectCrop(this);
-        }   */      
+        fm.SelectDeselectCrop(this);    
     }
 
     void InitializeUI()

@@ -23,9 +23,6 @@ public class CrecimientoParalelo : MonoBehaviour
     public CropObject selectedCrop;
 
     public WeatherSystem clima;
-
-    public AdicionalesBtn adicionales;
-    public AgriculturaBtn agricultura;
     
 
 

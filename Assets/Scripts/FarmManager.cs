@@ -11,6 +11,9 @@ public class FarmManager : MonoBehaviour
 
     public Sprite selectImg;
     public Sprite deselectImg;
+    CrecimientoParalelo Crop;
+    public AgriculturaBtn agri;
+    public AdicionalesBtn adicionales;
 
     
 
@@ -32,6 +35,16 @@ public class FarmManager : MonoBehaviour
                 selectCrop.btnImage.sprite = selectImg;
                 selectCrop.btnText.text = "Seleccionar";
                 selectCrop.btnText.alignment = TextAlignmentOptions.Center;
+
+                Crop = GameObject.Find(selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+                Crop.fertilizanteSelec = false;
+                Crop.insecticidaSelec = false;
+                Crop.abonoSelec = false;
+                Crop.agriRegenerativa = false;
+                Crop.agriTradicional = false;
+                agri.desactivarAgri();
+                adicionales.desactivarOpciones();
             }
 
             selectCrop = newCrop;

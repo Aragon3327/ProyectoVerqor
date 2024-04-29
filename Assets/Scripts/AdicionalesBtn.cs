@@ -334,6 +334,14 @@ public class AdicionalesBtn : MonoBehaviour
         playerInventory.instance.isFull[ItemPos] = false;
     }
 
+    public void desactivarOpciones()
+    {
+        foreach (var btnAdicional in btnsAdicionales)
+        {
+            btnAdicional.GetComponent<Image>().sprite = deselectImg;
+        }
+    }
+
     int FindItemPosition(string itemName)
     {
         for (int i = 0; i < playerInventory.instance.slots.Length; i++)

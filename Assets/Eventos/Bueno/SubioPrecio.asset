@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: SubioPrecio
   eventTypeImg: {fileID: 4921545448054487618, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
-  descripcion: "El precio de tu producto subi\xF3 este ciclo"
+  descripcion: "El precio de tu producto subi\xF3            este ciclo"
   eventoImg: {fileID: 384162750, guid: e582dd6f7cf85bd448cd3129b3c39e04, type: 3}
   cantidad: 0
   eventType: BuenoSubioPrecio

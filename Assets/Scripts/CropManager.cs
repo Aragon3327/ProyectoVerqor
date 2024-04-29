@@ -52,10 +52,12 @@ public class CropManager : MonoBehaviour
             }
         }
 
-        if (fm.isPlanting && hasItem)
+        CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+
+        if (fm.isPlanting && hasItem && !CropObj.isPlanted)
         {
             // Plantar(fm.selectCrop.crop);
-            CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
+            // CropObj = GameObject.Find(fm.selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
             CropObj.Plantar(fm.selectCrop.crop, true);
             fm.SelectDeselectCrop(fm.selectCrop);
 
@@ -90,6 +92,11 @@ public class CropManager : MonoBehaviour
             desactivarOpciones();
             notificacion[0].SetActive(true);
             fm.SelectDeselectCrop(fm.selectCrop);
+        }
+        else if (CropObj.isPlanted)
+        {
+            // Mostrar panel que ya hay un cultivo plantado
+            notificacion[3].SetActive(true);
         }
     }
 
