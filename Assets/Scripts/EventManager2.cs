@@ -28,41 +28,52 @@ public class EventManager2 : MonoBehaviour
         // int randomEventIndex = 6;
         GameObject randomPrefab = eventosPrefabs[randomEventIndex];
 
-        eventPanelParent.gameObject.SetActive(true);       
+        eventPanelParent.gameObject.SetActive(true);
 
-        
+
         eventData = randomPrefab.GetComponent<EventPanel>().evento;
 
         // Si el clima es inundacion y el evento es un Incendio, cambiar a evento de DanioHogar
-        if(clima.currentWeather == WeatherSystem.WeatherType.inundacion && randomEventIndex == 7)
+        if (clima.currentWeather == WeatherSystem.WeatherType.inundacion && randomEventIndex == 7)
         {
 
             eventData = eventosPrefabs[10].GetComponent<EventPanel>().evento;
-            
+
             eventosPrefabs[10].SetActive(true);
         }
         // Si el clima es sequia y el evento es una Helada, cambiar a evento de Incendio
         else if (clima.currentWeather == WeatherSystem.WeatherType.sequia && randomEventIndex == 11)
         {
             eventData = eventosPrefabs[7].GetComponent<EventPanel>().evento;
-            
+
             eventosPrefabs[7].SetActive(true);
         }
-        else if (randomEventIndex == 6){
+        else if (randomEventIndex == 6)
+        {
             foreach (GameObject objeto in cultivos)
             {
                 CrecimientoParalelo crecimiento = objeto.GetComponent<CrecimientoParalelo>();
                 bool isPlanted = crecimiento.isPlanted;
                 bool insecticidaSelec = crecimiento.insecticidaSelec;
+                bool regenerativa = crecimiento.agriRegenerativa;
 
                 if (isPlanted && !insecticidaSelec)
                 {
-                    crecimiento.Cosechar(false);
-                    crecimiento.isPlanted = false;
+                    if (regenerativa)
+                    {
+                        crecimiento.Cosechar(false);
+                        StartCoroutine(PlantarDespuesDeTresSegundos(crecimiento));
+                    }
+                    else
+                    {
+                        crecimiento.Cosechar(false);
+                        crecimiento.isPlanted = false;
+                    }
                 }
+
                 // crecimiento.insecticidaSelec = false;
             }
-            
+
             eventosPrefabs[6].SetActive(true);
         }
         else
@@ -82,11 +93,17 @@ public class EventManager2 : MonoBehaviour
         Time.timeScale = 1;
 
         eventPanelParent.gameObject.SetActive(false);
-        
+
         // Desactivar todas los eventosPrefabs
         foreach (GameObject evento in eventosPrefabs)
         {
             evento.SetActive(false);
         }
+    }
+
+    IEnumerator PlantarDespuesDeTresSegundos(CrecimientoParalelo crecimiento)
+    {
+        yield return new WaitForSeconds(3f);
+        crecimiento.Plantar(crecimiento.selectedCrop, true);
     }
 }
