@@ -13,7 +13,13 @@ public class EventManager2 : MonoBehaviour
     private EventData eventData;
 
     public GameObject[] cultivos;
+    AudioManager audioManager;
 
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +29,7 @@ public class EventManager2 : MonoBehaviour
 
     public void ChangeEvent()
     {
+        audioManager.Playsfx(audioManager.bueno);
         // Selecciona un evento aleatorio
         int randomEventIndex = Random.Range(0, eventosPrefabs.Length);
         // int randomEventIndex = 6;
@@ -90,6 +97,7 @@ public class EventManager2 : MonoBehaviour
 
     public void OnClickEntendido()
     {
+        audioManager.Playsfx(audioManager.buttonsound);
         Time.timeScale = 1;
 
         eventPanelParent.gameObject.SetActive(false);
@@ -99,6 +107,7 @@ public class EventManager2 : MonoBehaviour
         {
             evento.SetActive(false);
         }
+        
     }
 
     IEnumerator PlantarDespuesDeTresSegundos(CrecimientoParalelo crecimiento)

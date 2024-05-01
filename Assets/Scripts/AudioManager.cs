@@ -16,6 +16,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip walk;
     public AudioClip papel;
     public AudioClip buttonsound;
+    public AudioClip plantar;
+    public AudioClip comprar;
+    public AudioClip bueno;
+    public AudioClip malo;
+    public AudioClip cat;
+    public AudioClip verqor;
+    public AudioClip coyote;
+    public AudioClip banco;
+    public AudioClip win;
+    public AudioClip lose;
 
     private static AudioManager instance = null;
 
@@ -70,6 +80,13 @@ public class AudioManager : MonoBehaviour
     }
 
     public void Playsfx(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
+        isPlayingSfx = true;
+        Invoke("ResetIsPlayingSfx", clip.length);
+    }
+
+    public void PlayOnesfx(AudioClip clip)
     {
         if (!isPlayingSfx)
         {

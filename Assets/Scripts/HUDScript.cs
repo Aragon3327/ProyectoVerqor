@@ -18,6 +18,8 @@ public class HUDScript : MonoBehaviour
 
     public WeatherSystem clima;
     public EventManager2 evento;
+    AudioManager audioManager;
+
 
     private float tiempoCiclo = 60;
     private float tiempoCiclo2;
@@ -58,6 +60,8 @@ public class HUDScript : MonoBehaviour
         win.enabled = false;
         lose.enabled = false;
         neutral.enabled = false;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
 
     void FixedUpdate()
@@ -70,7 +74,7 @@ public class HUDScript : MonoBehaviour
 
         DisplayTime(tiempoCiclo);
 
-        if(numCiclos > 10){
+        if(numCiclos > 3){
             finalizado = true;
             panelFinal.SetActive(true);
             Time.timeScale = (finalizado) ? 0 : 1;
@@ -79,12 +83,15 @@ public class HUDScript : MonoBehaviour
             gananciaFinal.SetText((ganancia - deuda).ToString());
             if((ganancia - deuda) > 0){
                 win.enabled = true;
+                audioManager.Playsfx(audioManager.win);
             }
             else if ((ganancia - deuda) < 0){
                 lose.enabled = true;
+                audioManager.Playsfx(audioManager.lose);
             }
             else{
                 neutral.enabled = true;
+                audioManager.Playsfx(audioManager.malo);
             }
         }
 

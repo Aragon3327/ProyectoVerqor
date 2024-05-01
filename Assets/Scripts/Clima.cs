@@ -15,6 +15,7 @@ public class WeatherSystem : MonoBehaviour
     public UnityEngine.UI.Image oscuro;
     public UnityEngine.UI.Image claro;
     public GameObject sombrero;
+    public GameObject sombrerof;
     public GameObject sombrerov;
     public GameObject sombreroc;
     public GameObject sombrerob;
@@ -45,6 +46,7 @@ public class WeatherSystem : MonoBehaviour
         //No se muestra en la pantalla la animacion de lluvia
         AnimRain.SetActive(false);
         sombrero.SetActive(false);
+        sombrerof.SetActive(false);
         sombrerov.SetActive(false);
         sombreroc.SetActive(false);
         sombrerob.SetActive(false);
@@ -63,6 +65,7 @@ public class WeatherSystem : MonoBehaviour
                 oscuro.enabled = true;
                 AnimRain.SetActive(true);
                 sombrero.SetActive(true);
+                sombrerof.SetActive(true);
                 sombrerov.SetActive(true);
                 sombreroc.SetActive(true);
                 sombrerob.SetActive(true);
