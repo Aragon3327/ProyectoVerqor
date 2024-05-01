@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour
 {
     public GameObject dialoguePanel;
+    public GameObject NPCPanel;
     public Dialogue dialogue;
     private bool isPlayerNear = false;
     private bool isNo = false;
@@ -17,6 +19,7 @@ public class DialogueTrigger : MonoBehaviour
     public Button continueBtn;
     public Button skipBtn;
     public Button tiendaBtn;
+
     // public int finanDialogIndex = 0;
 
     public Animator animator;
@@ -24,12 +27,18 @@ public class DialogueTrigger : MonoBehaviour
     private Queue<string> sentences;
 
     public HUDScript finan;
+    public BotonPrestamo tipoPrestamo;
 
+    bool prestamo;
+    bool seguro;
+
+    private bool isDialogueOpen = false;
 
     void Start()
     {
         sentences = new Queue<string>();
         dialoguePanel.SetActive(false);
+        tiendaBtn.gameObject.SetActive(false);
 
         foreach (var button in optionButtons)
         {
@@ -41,24 +50,32 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            animator.SetBool("IsOpen", true);
-            dialoguePanel.SetActive(true);
-            foreach (var button in optionButtons)
+            if (!isDialogueOpen)
             {
-                button.gameObject.SetActive(false); // Hide buttons initially
-            }
-            continueBtn.gameObject.SetActive(true);
-            skipBtn.gameObject.SetActive(true);
+                animator.SetBool("IsOpen", true);
+                dialoguePanel.SetActive(true);
+                NPCPanel.SetActive(true);
+                foreach (var button in optionButtons)
+                {
+                    button.gameObject.SetActive(false); // Hide buttons initially
+                }
+                continueBtn.gameObject.SetActive(true);
+                skipBtn.gameObject.SetActive(true);
 
-            StartDialogue(dialogue);
+
+                StartDialogue(dialogue);
+                isDialogueOpen = true;
+            }
+            else
+            {
+                animator.SetBool("IsOpen", false);
+                dialoguePanel.SetActive(false);
+                // NPCPanel.SetActive(false);
+                isDialogueOpen = false;
+            }
             // TriggerDialogue();
         }
     }
-
-    // public void TriggerDialogue ()
-    // {
-    //     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-    // }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -82,17 +99,43 @@ public class DialogueTrigger : MonoBehaviour
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
-        if ((finan.prestamoUsado && finan.seguroVerqorUsado) || (finan.prestamoUsado && finan.seguroCoyoteUsado) || (finan.prestamoUsado && finan.seguroBancoUsado))
-        {
-            string lastSentence = dialogue.sentences[dialogue.sentences.Length - 1];
-            if (nameText.text == "Verqor" && finan.prestamoUsado)
-            {
-                // Cambiar el texto de la ultima oracion
-                lastSentence = "Gracias por contratar con nosotros! Ahora puedes acceder a la tienda fácilmente con nosotros!";
-            }
+        string lastSentence;
 
+        if (nameText.text == "Verqor" && tipoPrestamo.nombreBoton == "Verfin" && finan.seguroVerqorUsado && finan.prestamoUsado)
+        {
+            lastSentence = "¡Gracias por contratar con nosotros! Te ofreceremos un gran apoyo a tu agricola!";
+
+            continueBtn.gameObject.SetActive(false);
+            skipBtn.gameObject.SetActive(false);
             sentences.Enqueue(lastSentence);
 
+
+            // Display the desired dialogue
+            DisplayNextSentence();
+            return;
+        }
+        else if (nameText.text == "Coyote" && tipoPrestamo.nombreBoton == "Coyofin" && finan.seguroCoyoteUsado && finan.prestamoUsado)
+        {
+            // Cambiar el texto de la ultima oracion
+            lastSentence = "¿Que tranza? Gracias por contratar conmigo. Seguramente obtendras más lana.";
+
+            continueBtn.gameObject.SetActive(false);
+            skipBtn.gameObject.SetActive(false);
+            sentences.Enqueue(lastSentence);
+
+
+            // Display the desired dialogue
+            DisplayNextSentence();
+            return;
+        }
+        else if (nameText.text == "Banco" && tipoPrestamo.nombreBoton == "Banfin" && finan.seguroBancoUsado && finan.prestamoUsado)
+        {
+            // Cambiar el texto de la ultima oracion
+            lastSentence = "¡Gracias por su contrato! ¡Vuelva pronto!";
+
+            continueBtn.gameObject.SetActive(false);
+            skipBtn.gameObject.SetActive(false);
+            sentences.Enqueue(lastSentence);
 
             // Display the desired dialogue
             DisplayNextSentence();
@@ -129,45 +172,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             sentence = sentences.Dequeue();
 
-            if (nameText.text == "Verqor" && finan.prestamoUsado)
-            {
-                sentence = "¡Gracias por contratar con nosotros! Ahora puedes acceder a la tienda fácilmente con nosotros!";
-                // tiendaBtn.gameObject.SetActive(true);
-                // sentences.Enqueue(sentence);
-            }
-            if (finan.seguroVerqorUsado)
-            {
-                sentence = "¡Gracias por contratar con nosotros! Te ofreceremos un gran apoyo a tu agricola!";
-                // sentences.Enqueue(sentence);
-            }
-            else if (nameText.text == "Coyote" && (finan.prestamoUsado || finan.seguroCoyoteUsado))
-            {
-                sentence = "¿Que tranza? Gracias por contratar conmigo. Seguramente obtendras más lana.";
-                // sentences.Enqueue(sentence);
-            }
-            else if (nameText.text == "Banco" && (finan.prestamoUsado || finan.seguroBancoUsado))
-            {
-                sentence = "¡Gracias por su contrato! ¡Vuelva pronto!";
-                // sentences.Enqueue(sentence);
-            }
-            else if (nameText.text == "Verqor" && isNo)
-            {
-                sentence = "Esta bien... Puedes regresar cuando cambies de opinion. Siempre estaremos aquí para ayudarte!";
-                isNo = false;
-                // sentences.Enqueue(sentence);
-            }
-            else if (nameText.text == "Coyote" && isNo)
-            {
-                sentence = "Hmmm... seguro? Te arrepentiras de no poder ganar más lana...";
-                isNo = false;
-                // sentences.Enqueue(sentence);
-            }
-            else if (nameText.text == "Banco" && isNo)
-            {
-                sentence = "¡No hay problema! Puedes regresar cuando quieras un préstamo con nosotros.";
-                isNo = false;
-                // sentences.Enqueue(sentence);
-            }
+            sentence = changeText(sentence);
         }
         else
         {
@@ -213,6 +218,9 @@ public class DialogueTrigger : MonoBehaviour
         // If there is only one sentence left in the queue, display the buttons
         if (sentences.Count == 1)
         {
+            string[] names = { "Verqor", "Coyote", "Banco" };
+            bool[] segurosUsados = { finan.seguroVerqorUsado, finan.seguroCoyoteUsado, finan.seguroBancoUsado };
+
             foreach (var button in optionButtons)
             {
                 button.gameObject.SetActive(true);
@@ -224,18 +232,30 @@ public class DialogueTrigger : MonoBehaviour
                 // Transform button
                 RectTransform rT = optionButtons[1].GetComponent<RectTransform>();
                 rT.anchoredPosition = new Vector2(145, -24.5f);
-                if (nameText.text == "Verqor")
+            }
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (nameText.text == names[i] && segurosUsados[i])
                 {
-                    tiendaBtn.gameObject.SetActive(true);
+                    optionButtons[1].gameObject.SetActive(false);
+                    // Transform button
+                    RectTransform rT = optionButtons[0].GetComponent<RectTransform>();
+                    rT.anchoredPosition = new Vector2(145, -24.5f);
+                    break;
                 }
             }
-            if (finan.seguroVerqorUsado)
-            {
-                optionButtons[1].gameObject.SetActive(false);
-                // Transform button
-                RectTransform rT = optionButtons[0].GetComponent<RectTransform>();
-                rT.anchoredPosition = new Vector2(145, -24.5f);
-            }
+        }
+
+        StartCoroutine(MostrarBoton());
+    }
+
+    IEnumerator MostrarBoton()
+    {
+        yield return null;
+        if (nameText.text == "Verqor" && finan.prestamoUsado)
+        {
+            tiendaBtn.gameObject.SetActive(true);
         }
     }
 
@@ -245,22 +265,6 @@ public class DialogueTrigger : MonoBehaviour
         dialoguePanel.SetActive(false);
         Debug.Log("End of conversation");
     }
-
-    /* public void OnFinanceSelected()
-    {
-        continueBtn.gameObject.SetActive(true);
-
-        foreach (var button in optionButtons)
-        {
-            button.gameObject.SetActive(false);
-        }
-
-        string lastSentence = "Gracias por contratar con nosotros! Ahora puedes acceder a la tienda fácilmente con nosotros!";
-
-        sentences.Enqueue(lastSentence);
-
-        tiendaBtn.gameObject.SetActive(true);
-    } */
 
     public void OnButtonOptionClick()
     {
@@ -275,31 +279,58 @@ public class DialogueTrigger : MonoBehaviour
 
     public void OnClickNo()
     {
-        /* DisplayNextSentence();
-        continueBtn.gameObject.SetActive(true);
-
-        foreach (var button in optionButtons)
-        {
-            button.gameObject.SetActive(false);
-        }
-                
-        string lastSentence = dialogue.sentences[dialogue.sentences.Length - 1];
-
-        if (nameText.text == "Verqor")
-        {
-            lastSentence = "Esta bien... Puedes regresar cuando cambies de opinion. Siempre estaremos aquí para ayudarte!";
-        }
-        else if (nameText.text == "Coyote")
-        {
-            lastSentence = "Hmmm... seguro? Te arrepentiras de no poder ganar más lana...";
-        }
-        else if (nameText.text == "Banco")
-        {
-            lastSentence = "¡No hay problema! Puedes regresar cuando quieras un préstamo con nosotros.";
-        }
-
-        sentences.Enqueue(lastSentence); */
         isNo = true;
     }
 
+    string changeText(string sentence)
+    {
+        if (nameText.text == "Verqor" && prestamo)
+        {
+            sentence = "¡Gracias por contratar con nosotros! Ahora puedes acceder a la tienda fácilmente con nosotros!";
+        }
+        else if (nameText.text == "Verqor" && seguro)
+        {
+            sentence = "¡Gracias por contratar con nosotros! Te ofreceremos un gran apoyo a tu agricola!";
+        }
+        else if (nameText.text == "Coyote" && (finan.prestamoUsado || finan.seguroCoyoteUsado))
+        {
+            sentence = "¿Que tranza? Gracias por contratar conmigo. Seguramente obtendras más lana.";
+        }
+        else if (nameText.text == "Banco" && (finan.prestamoUsado || finan.seguroBancoUsado))
+        {
+            sentence = "¡Gracias por su contrato! ¡Vuelva pronto!";
+        }
+        
+        if (nameText.text == "Verqor" && isNo)
+        {
+            sentence = "Esta bien... Puedes regresar cuando cambies de opinion. Siempre estaremos aquí para ayudarte!";
+            isNo = false;
+        }
+        else if (nameText.text == "Coyote" && isNo)
+        {
+            sentence = "Hmmm... seguro? Te arrepentiras de no poder ganar más lana...";
+            isNo = false;
+        }
+        else if (nameText.text == "Banco" && isNo)
+        {
+            sentence = "¡No hay problema! Puedes regresar cuando quieras un préstamo con nosotros.";
+            isNo = false;
+        }
+
+        return sentence;
+    }
+
+    public void OnPrestamoButtonPress()
+    {
+        // lastBtnPressed = "Prestamo";
+        prestamo = true;
+        seguro = false;
+    }
+
+    public void OnSeguroButtonPress()
+    {
+        // lastBtnPressed = "Seguro";
+        seguro = true;
+        prestamo = false;
+    }
 }

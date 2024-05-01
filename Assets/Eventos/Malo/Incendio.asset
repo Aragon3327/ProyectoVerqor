@@ -15,10 +15,11 @@ MonoBehaviour:
   eventName: Incendio
   eventTypeImg: {fileID: 2631046323181635569, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   descripcion: Hubo un Incendio
-  eventoImg: {fileID: 21300000, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
+  eventoImg: {fileID: -1551661173, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
   cantidad: 0
   eventType: Malo
   seguroAplicable: Verqor
   ganancia: 0
   perdida: 0.2
   perdidaSeguro: 0.02
+  itemsV: []

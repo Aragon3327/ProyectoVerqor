@@ -21,7 +21,8 @@ public class HUDScript : MonoBehaviour
     AudioManager audioManager;
 
 
-    private float tiempoCiclo = 60;
+    // private float tiempoCiclo = 720; // Tiempo real
+    private float tiempoCiclo = 60; // Para hacer pruebas
     private float tiempoCiclo2;
     public bool prestamoUsado = false;
     public bool seguroVerqorUsado = false;
@@ -37,7 +38,7 @@ public class HUDScript : MonoBehaviour
     }
 
     public UnityEngine.UI.Image Ver;
-    public UnityEngine.UI.Image Coy;    
+    public UnityEngine.UI.Image Coy;
     public UnityEngine.UI.Image Ban;
     public GameObject panelFinal;
 
@@ -74,22 +75,26 @@ public class HUDScript : MonoBehaviour
 
         DisplayTime(tiempoCiclo);
 
-        if(numCiclos > 3){
+        if (numCiclos > 3)
+        {
             finalizado = true;
             panelFinal.SetActive(true);
             Time.timeScale = (finalizado) ? 0 : 1;
             ingresoFinal.SetText(ganancia.ToString());
             deudaFinal.SetText(deuda.ToString());
             gananciaFinal.SetText((ganancia - deuda).ToString());
-            if((ganancia - deuda) > 0){
+            if ((ganancia - deuda) > 0)
+            {
                 win.enabled = true;
                 audioManager.Playsfx(audioManager.win);
             }
-            else if ((ganancia - deuda) < 0){
+            else if ((ganancia - deuda) < 0)
+            {
                 lose.enabled = true;
                 audioManager.Playsfx(audioManager.lose);
             }
-            else{
+            else
+            {
                 neutral.enabled = true;
                 audioManager.Playsfx(audioManager.malo);
             }
@@ -99,19 +104,31 @@ public class HUDScript : MonoBehaviour
         {
             tiempoCiclo -= Time.deltaTime;
 
-            // Para llamar a los eventos cada 5 segundos y 15 segundos
-            if (prestamoUsado && tiempoCiclo <= 10.00 && tiempoCiclo > 9.99)
+            // Para tiempo real
+            /* if (prestamoUsado)
             {
-                evento.ChangeEvent();
-            }
-            /* else if (tiempoCiclo <= 15 && tiempoCiclo > 14.99)
-            {
-                evento.ChangeEvent();
-            }
-            else if (tiempoCiclo <= 10 && tiempoCiclo > 9.99)
-            {
-                evento.ChangeEvent();
+                if (tiempoCiclo <= 540.00 && tiempoCiclo > 539.99)
+                {
+                    evento.ChangeEvent();
+                }
+                else if (tiempoCiclo <= 360.00 && tiempoCiclo > 359.99)
+                {
+                    evento.ChangeEvent();
+                }
             } */
+
+            // Para hacer pruebas
+            if (prestamoUsado)
+            {
+                if (tiempoCiclo <= 40.00 && tiempoCiclo > 39.99)
+                {
+                    evento.ChangeEvent();
+                }
+                else if (tiempoCiclo <= 20.00 && tiempoCiclo > 19.99)
+                {
+                    evento.ChangeEvent();
+                }
+            }
         }
         else
         {

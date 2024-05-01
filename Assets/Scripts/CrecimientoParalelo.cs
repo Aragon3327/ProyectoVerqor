@@ -106,7 +106,7 @@ public class CrecimientoParalelo : MonoBehaviour
         {
             // Aumentar el tiempo entre etapas de crecimiento
             // timer = selectedCrop.timeSpeedUp;
-            timer = selectedCrop.timeBtwStages / 2;
+            timer = selectedCrop.timeBtwStages / 4;
         }
         else
         {
