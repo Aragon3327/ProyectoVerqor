@@ -21998,6 +21998,16 @@ MonoBehaviour:
   walk: {fileID: 8300000, guid: 930358d826c80654da9d74a9ad9d1bef, type: 3}
   papel: {fileID: 8300000, guid: bc029734f9af4e94c8e3277726904831, type: 3}
   buttonsound: {fileID: 8300000, guid: 54c45f36aa9e1294790ec7e95dc1d453, type: 3}
+  plantar: {fileID: 8300000, guid: 5c3519c290ab87841ab5e0c7a3320e42, type: 3}
+  comprar: {fileID: 8300000, guid: b806c7a785755d84590fcee13e6a4dfd, type: 3}
+  bueno: {fileID: 8300000, guid: 5a2808f0b6bd5f241a9914a919e5e09e, type: 3}
+  malo: {fileID: 8300000, guid: b9a4a247eedd42a4381c6bbb414b3c69, type: 3}
+  cat: {fileID: 8300000, guid: b8cd924b5a111d54b91019c010138137, type: 3}
+  verqor: {fileID: 8300000, guid: d09ca8d63d53a8c40970648762a65472, type: 3}
+  coyote: {fileID: 8300000, guid: 3566dec3541eaa246a3f770cd9b81c8c, type: 3}
+  banco: {fileID: 8300000, guid: a6c8d56e5d64a324da0a55c170b8841d, type: 3}
+  win: {fileID: 8300000, guid: 2c4bc183a5df5aa4baf7c4fcf236a2de, type: 3}
+  lose: {fileID: 8300000, guid: c8a3fe17a6641ec48b38fb455a40a223, type: 3}
 --- !u!114 &1834704207
 MonoBehaviour:
   m_ObjectHideFlags: 0
