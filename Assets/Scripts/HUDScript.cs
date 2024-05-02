@@ -21,13 +21,15 @@ public class HUDScript : MonoBehaviour
     AudioManager audioManager;
 
 
-    // private float tiempoCiclo = 720; // Tiempo real
-    private float tiempoCiclo = 60; // Para hacer pruebas
+    // public float tiempoCiclo = 720; // Tiempo real
+    public float tiempoCiclo = 60; // Para hacer pruebas
     private float tiempoCiclo2;
     public bool prestamoUsado = false;
     public bool seguroVerqorUsado = false;
     public bool seguroCoyoteUsado = false;
-
+    public string financiamiento = "";
+    public string seguro1= "";
+    public string seguro2= "";
     public bool seguroBancoUsado = false;
     public int numCiclos = 0;
     public bool finalizado = false;
@@ -62,7 +64,7 @@ public class HUDScript : MonoBehaviour
         lose.enabled = false;
         neutral.enabled = false;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-
+        Time.timeScale = 1;
     }
 
     void FixedUpdate()
@@ -159,14 +161,17 @@ public class HUDScript : MonoBehaviour
                 case "Verfin":
                     porcentajeAdicional = 0.3f; //Verqor 30%
                     Ver.enabled = true;
+                    financiamiento ="Verqor";
                     break;
                 case "Banfin":
                     porcentajeAdicional = 0.5f; // Banco 50%
                     Ban.enabled = true;
+                    financiamiento ="Banco";
                     break;
                 case "Coyofin":
                     porcentajeAdicional = 0.75f; // Coyote 75%
                     Coy.enabled = true;
+                    financiamiento ="Coyote";
                     break;
                 default:
                     return;
@@ -200,6 +205,13 @@ public class HUDScript : MonoBehaviour
             playerStats.instance.deuda += costoSeguro;
             deudaText.SetText(playerStats.instance.deuda.ToString());
             seguroVerqorUsado = true;
+            if(seguro1==""){
+                seguro1="Verqor";
+            }else{
+                if(seguro2==""){
+                    seguro2="Verqor";
+                }
+            }
         }
         else
         {
@@ -218,6 +230,13 @@ public class HUDScript : MonoBehaviour
             playerStats.instance.deuda += costoSeguro;
             deudaText.SetText(playerStats.instance.deuda.ToString());
             seguroCoyoteUsado = true;
+            if(seguro1==""){
+                seguro1="Coyote";
+            }else{
+                if(seguro2==""){
+                    seguro2="Coyote";
+                }
+            }
         }
         else
         {
@@ -235,6 +254,13 @@ public class HUDScript : MonoBehaviour
             playerStats.instance.deuda += costoSeguro;
             deudaText.SetText(playerStats.instance.deuda.ToString());
             seguroBancoUsado = true;
+            if(seguro1==""){
+                seguro1="Banco";
+            }else{
+                if(seguro2==""){
+                    seguro2="Banco";
+                }
+            }
         }
         else
         {

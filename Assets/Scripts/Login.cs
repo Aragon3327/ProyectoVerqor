@@ -16,6 +16,8 @@ public class Login : MonoBehaviour
     public GameObject LoginPanel;
     public GameObject ChoosePanel;
 
+    public GameObject Partida;
+
 
     private struct Usuario{
         public string number;
@@ -42,8 +44,13 @@ public class Login : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.Success) {
             string respuesta = request.downloadHandler.text;
-            Debug.Log("Respuesta: " + respuesta);
-            PlayerPrefs.SetString("IdUsuario",respuesta);
+            if(respuesta.Contains("time")){    
+                Debug.Log("Respuesta: " + respuesta);
+                CargaPartida.instance.UpdatePartida(respuesta);
+                DontDestroyOnLoad(Partida);
+            }else{
+                PlayerPrefs.SetString("IdUsuario",respuesta);
+            }
             ChoosePanel.SetActive(true);
             LoginPanel.SetActive(false);
         }

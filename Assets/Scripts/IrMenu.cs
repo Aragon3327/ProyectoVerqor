@@ -7,7 +7,7 @@ public class IrMenu : MonoBehaviour
 {
     public void IrMenuPrincipal()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Login");
     }
 
 

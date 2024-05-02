@@ -25,7 +25,6 @@ public class CrecimientoParalelo : MonoBehaviour
     public WeatherSystem clima;
     
 
-
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +55,7 @@ public class CrecimientoParalelo : MonoBehaviour
             }
         }
     }
+    
     public void Plantar(CropObject newCrop,bool isPlanted)
     {
         selectedCrop = newCrop;
