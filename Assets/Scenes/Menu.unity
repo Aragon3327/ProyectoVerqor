@@ -1356,8 +1356,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Estos objetos nos iran guiando como son las condiciones del  clima y el
-    financiamiento que tenemos contratado a lo largo del juego '
+  m_text: Estos objetos nos iran guiando como son las condiciones del clima y el
+    financiamiento que tenemos contratado a lo largo del juego.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.8
+  m_fontSize: 25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1808,10 +1808,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.8
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2178,10 +2178,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.4
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2524,7 +2524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 444, y: -59}
+  m_AnchoredPosition: {x: 444, y: -48.107517}
   m_SizeDelta: {x: 93.3878, y: 90.7815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152638443
@@ -2956,15 +2956,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.7
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3988,7 +3988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -249}
+  m_AnchoredPosition: {x: -434, y: -249}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296119884
@@ -4113,15 +4113,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.55
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4149,7 +4149,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -61.144043, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4514,7 +4514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: -139}
+  m_AnchoredPosition: {x: -380, y: -137}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360293415
@@ -5328,8 +5328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.05606, y: -42.196884}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: -40, y: -46.481}
+  m_SizeDelta: {x: 91.5215, y: 92.9617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410100472
 MonoBehaviour:
@@ -5353,7 +5353,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -1961005567, guid: 8b06fa4e55c904a42b7d318a2308cecb, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5763,7 +5763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -249}
+  m_AnchoredPosition: {x: 76, y: -249}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474821603
@@ -6024,15 +6024,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.75
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6133,12 +6133,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'En esta zona es donde le agregaras valor a tu cultivo para aumentar su
-    venta
+    venta.
 
-    Puedes encontrar el sitio a lado del granero donde se encuentra verqor
+    Puedes encontrar el sitio a lado del granero donde se encuentra verqor.
 
     Recuerda
-    debes de tener las semillas del cultivo que deseas plantar'
+    debes de tener las semillas del cultivo que deseas plantar.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -6165,10 +6165,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.85
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6201,7 +6201,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -264.15814, w: -144.95383}
+  m_margin: {x: 0, y: 0, z: -264.15814, w: -127.85112}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6381,10 +6381,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.75
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -7402,8 +7402,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eres el ecanrgado del campo familiar  tu mision es pagar la deuda en su
-    totalidad y sacar la mayor cantidad de ganancias posible '
+  m_text: "Eres el encargado del campo familiar  tu misi\xF3n es pagar la deuda en
+    su totalidad y sacar la mayor cantidad de ganancias posible. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -7515,7 +7515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255, y: -284.3504}
+  m_AnchoredPosition: {x: -253, y: -267}
   m_SizeDelta: {x: 223.3403, y: 47.3307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599066287
@@ -7567,10 +7567,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.9
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -8743,15 +8743,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.2
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9001,9 +9001,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Listo ya sabes lo necesario para empezar tu aventura y encargarte de tus
-    parcelas y sacarles el mayor provecho \nTe deseo buena suerte y que tomes sabias
-    decisiones !!!!!"
+  m_text: 'Listo ya sabes lo necesario para empezar tu aventura y encargarte de tus
+    parcelas y sacarles el mayor provecho.
+
+    Te deseo buena suerte y que tomes
+    sabias decisiones !!!!!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -11098,7 +11100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -603.6113, y: 26.0513}
+  m_AnchoredPosition: {x: -594, y: 28}
   m_SizeDelta: {x: 253.3474, y: 99.4549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887749575
@@ -11121,8 +11123,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Aqui debes de seleccionar un cultivo a la vez depeniendo de lo que quieras
-    plantar '
+  m_text: Aqui debes de seleccionar un cultivo a la vez depeniendo de lo que quieras
+    plantar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -11149,10 +11151,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.7
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -11234,7 +11236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -68}
+  m_AnchoredPosition: {x: -434, y: -68}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898151638
@@ -12448,7 +12450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: 209}
+  m_AnchoredPosition: {x: -380, y: 211}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021497528
@@ -12787,7 +12789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -68}
+  m_AnchoredPosition: {x: 76, y: -68}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032234458
@@ -13229,7 +13231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -249}
+  m_AnchoredPosition: {x: -417, y: -221}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117507958
@@ -13980,15 +13982,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.8
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -14087,9 +14089,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'El fianciamiento informal (Coyote ) nos ofrece dinero de manera rapida
+  m_text: "El fianciamiento informal (Coyote) nos ofrece dinero de manera r\xE1pida
     y sin complicaciones pero al no estar protegidos esto puede ser riesgoso al no
-    ser controlado por alguna institucion '
+    ser controlado por alguna institucion "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -14518,8 +14520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 529, y: -8}
-  m_SizeDelta: {x: 100, y: 161.6266}
+  m_AnchoredPosition: {x: 525, y: -30.343}
+  m_SizeDelta: {x: 67.2315, y: 121.3131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253475424
 MonoBehaviour:
@@ -14541,7 +14543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
+  m_Sprite: {fileID: -1551661173, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14616,7 +14618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Plaga \n-2% por parcela \nSe Reduce con Insecticida"
+  m_text: "Plaga \nPierdes cosecha\nSe Reduce con Insecticida"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -14643,15 +14645,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.85
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -15019,7 +15021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: 105}
+  m_AnchoredPosition: {x: 108, y: 133}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300746326
@@ -15042,11 +15044,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
+  m_Sprite: {fileID: -1551661173, guid: 7fd6db0f30a530b43a9516d16b4fcef5, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -15616,7 +15618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -50.76813}
+  m_AnchoredPosition: {x: -53, y: -39.87565}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375329656
@@ -15741,15 +15743,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.6
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -15982,9 +15984,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98f65380fb5893c479aa8e674f8a486c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ba62385d9eb78140b7c5a201e40eab3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -16172,7 +16174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: 42}
+  m_AnchoredPosition: {x: -380, y: 44}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408354206
@@ -16590,7 +16592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: -63.892517}
+  m_AnchoredPosition: {x: 544, y: -53}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437035795
@@ -16800,7 +16802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: 105}
+  m_AnchoredPosition: {x: -417, y: 133}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463260723
@@ -16995,7 +16997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: 42}
+  m_AnchoredPosition: {x: -387, y: 40}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479046097
@@ -17862,7 +17864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: -139}
+  m_AnchoredPosition: {x: -387, y: -141}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547168354
@@ -18336,7 +18338,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Verqor es una fintech que puedes contratar desde la comodidad de tu casa
-    teniendo una tasa de interes de l 50% pero siendo contratada de inmediato '
+    teniendo una tasa de interes de 50% pero siendo contratada de inmediato '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
@@ -18448,7 +18450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: 105}
+  m_AnchoredPosition: {x: -434, y: 105}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576932640
@@ -18527,7 +18529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408, y: 209}
+  m_AnchoredPosition: {x: -387, y: 213}
   m_SizeDelta: {x: 188.8146, y: 25.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606618612
@@ -19102,7 +19104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277.2865, y: -51}
+  m_AnchoredPosition: {x: 277.2865, y: -40.107517}
   m_SizeDelta: {x: 771.5736, y: 28.626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688216132
@@ -19635,7 +19637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 105}
+  m_AnchoredPosition: {x: 76, y: 105}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714986564
@@ -21147,7 +21149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249, y: -214}
+  m_AnchoredPosition: {x: 268, y: -214}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816368639
@@ -21223,7 +21225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -68}
+  m_AnchoredPosition: {x: -417, y: -40}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816927773
@@ -21348,15 +21350,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.8
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -22120,15 +22122,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.7
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -22339,7 +22341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: -249}
+  m_AnchoredPosition: {x: 108, y: -221}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852301956
@@ -22870,10 +22872,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.2
-  m_fontSizeBase: 36
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -22906,7 +22908,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 87.79144, y: -26.971313, z: 408.78882, w: -40.18286}
+  m_margin: {x: 87.79144, y: -26.971313, z: 390.47876, w: -40.18286}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -23088,7 +23090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5325}
   m_AnchorMax: {x: 0.5, y: 0.5325}
-  m_AnchoredPosition: {x: 348, y: -3.5999756}
+  m_AnchoredPosition: {x: 360, y: -2.6}
   m_SizeDelta: {x: 771.5736, y: 28.626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911034003
@@ -23138,10 +23140,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -23534,7 +23536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: -68}
+  m_AnchoredPosition: {x: 108, y: -40}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939013745
@@ -24935,7 +24937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: -100}
+  m_AnchoredPosition: {x: 15, y: -93}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061280400
@@ -25069,8 +25071,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -247.00002, y: -57}
-  m_SizeDelta: {x: 250, y: 150}
+  m_AnchoredPosition: {x: -248.60757, y: -58.822704}
+  m_SizeDelta: {x: 255.3584, y: 177.6814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099914079
 MonoBehaviour:
@@ -25092,11 +25094,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98f65380fb5893c479aa8e674f8a486c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: f11c8cbfb0c509c4b83ef88dba7771fe, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -25194,10 +25196,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.8
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

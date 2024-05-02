@@ -20,7 +20,6 @@ MonoBehaviour:
   timeBtwStages: 10
   timeSlowed: 10
   timeSpeedUp: 2.5
-  cantidad: 0
   icon: {fileID: 365294493, guid: b7a0242256fd2b245aa079fa210f5446, type: 3}
   plantRender: {fileID: 0}
   itemVenta: {fileID: 11400000, guid: 9585079fd4251174eb03d1ac01e621e3, type: 2}

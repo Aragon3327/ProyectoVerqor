@@ -74,11 +74,11 @@ public class CrecimientoParalelo : MonoBehaviour
             timer /= 2;            
         }
 
-        if (agriTradicional)
+        /* if (agriTradicional)
         {
             // Aumentar tiempo de cosecha
             timer += 5;
-        }
+        } */
 
     }
 
@@ -99,14 +99,14 @@ public class CrecimientoParalelo : MonoBehaviour
         {
             // Reducir el tiempo entre etapas de crecimiento
             // timer = selectedCrop.timeSlowed;
-            timer = selectedCrop.timeBtwStages * 2;
+            timer = selectedCrop.timeBtwStages + (selectedCrop.timeBtwStages / 2);
 
         }
         else if (clima.currentWeather == WeatherSystem.WeatherType.inundacion)
         {
             // Aumentar el tiempo entre etapas de crecimiento
             // timer = selectedCrop.timeSpeedUp;
-            timer = selectedCrop.timeBtwStages / 4;
+            timer = selectedCrop.timeBtwStages - (selectedCrop.timeBtwStages / 4);
         }
         else
         {

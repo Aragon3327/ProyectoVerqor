@@ -107,20 +107,21 @@ public class HUDScript : MonoBehaviour
             tiempoCiclo -= Time.deltaTime;
 
             // Para tiempo real
-            /* if (prestamoUsado)
+            if (prestamoUsado)
             {
-                if (tiempoCiclo <= 540.00 && tiempoCiclo > 539.99)
+                if (tiempoCiclo <= 540.01 && tiempoCiclo > 539.99 || tiempoCiclo <= 180.01 && tiempoCiclo > 179.99)
                 {
                     evento.ChangeEvent();
+                    // Debug.Log("Evento: " + evento.eventData.eventName);
                 }
-                else if (tiempoCiclo <= 360.00 && tiempoCiclo > 359.99)
+                /* else if (tiempoCiclo <= 690.00 && tiempoCiclo > 689.99)
                 {
                     evento.ChangeEvent();
-                }
-            } */
+                } */
+            }
 
             // Para hacer pruebas
-            if (prestamoUsado)
+            /* if (prestamoUsado)
             {
                 if (tiempoCiclo <= 40.00 && tiempoCiclo > 39.99)
                 {
@@ -130,7 +131,7 @@ public class HUDScript : MonoBehaviour
                 {
                     evento.ChangeEvent();
                 }
-            }
+            } */
         }
         else
         {
