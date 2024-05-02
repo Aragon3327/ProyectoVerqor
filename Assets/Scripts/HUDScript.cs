@@ -21,8 +21,8 @@ public class HUDScript : MonoBehaviour
     AudioManager audioManager;
 
 
-    // public float tiempoCiclo = 720; // Tiempo real
-    public float tiempoCiclo = 60; // Para hacer pruebas
+    public float tiempoCiclo = 720; 
+    // public float tiempoCiclo = 60; // Para hacer pruebas
     private float tiempoCiclo2;
     public bool prestamoUsado = false;
     public bool seguroVerqorUsado = false;
