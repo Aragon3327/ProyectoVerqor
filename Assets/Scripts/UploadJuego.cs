@@ -28,8 +28,8 @@ public class UploadJuego : MonoBehaviour
         datos.Prestador = HUDScript.instance.financiamiento;
         // datos.Cultivos = 
         datos.Adeudo = playerStats.instance.deuda;
-        datos.Desastres = playerStats.instance.deuda;
-        datos.Fortuna = playerStats.instance.deuda;
+        datos.Desastres = EventManager2.instance.desastres;
+        datos.Fortuna = EventManager2.instance.fortunas;
 
         string datosJSON = JsonUtility.ToJson(datos); 
         print("JSON enviado: " + datosJSON);

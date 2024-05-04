@@ -17,10 +17,13 @@ public class EventManager2 : MonoBehaviour
     public int fortunas = 0;
     public int desastres = 0;
 
+    public static EventManager2 instance;
+
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        instance = this;
     }
 
     // Start is called before the first frame update
@@ -43,15 +46,15 @@ public class EventManager2 : MonoBehaviour
         eventData = randomPrefab.GetComponent<EventPanel>().evento;
 
         if(
-            randomPrefab == eventosPrefabs[0] || randomPrefab == eventosPrefabs[1] ||
-            randomPrefab == eventosPrefabs[2] || randomPrefab == eventosPrefabs[3] ||
-            randomPrefab == eventosPrefabs[4] || randomPrefab == eventosPrefabs[5]
-        ){fortunas+=1;}
+            randomEventIndex == 0 || randomEventIndex == 1 ||
+            randomEventIndex == 2 || randomEventIndex == 3 ||
+            randomEventIndex == 4 || randomEventIndex == 5
+        ){fortunas++;}
         if(
-            randomPrefab == eventosPrefabs[6] || randomPrefab == eventosPrefabs[7] ||
-            randomPrefab == eventosPrefabs[8] || randomPrefab == eventosPrefabs[9] ||
-            randomPrefab == eventosPrefabs[10] || randomPrefab == eventosPrefabs[11]
-        ){desastres+=1;}
+            randomEventIndex == 6 || randomEventIndex == 7 ||
+            randomEventIndex == 8 || randomEventIndex == 9 ||
+            randomEventIndex == 10 || randomEventIndex == 11
+        ){desastres++;}
 
         // Si el clima es inundacion y el evento es un Incendio, cambiar a evento de DanioHogar
         if (clima.currentWeather == WeatherSystem.WeatherType.inundacion && randomEventIndex == 7)

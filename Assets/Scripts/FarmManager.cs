@@ -19,42 +19,45 @@ public class FarmManager : MonoBehaviour
 
     public void SelectDeselectCrop(CropItem newCrop)
     {
-        if(selectCrop == newCrop)
-        {
-            Debug.Log("Deseleccionado: " + newCrop.crop.plantName);
-            selectCrop.btnImage.sprite = selectImg;
-            selectCrop.btnText.text = "Seleccionar";
-            selectCrop.btnText.alignment = TextAlignmentOptions.Center;
-            selectCrop = null;
-            isPlanting = false;        
-        }
-        else
-        {
-            if (selectCrop != null)
+        if(newCrop != null){
+
+            if(selectCrop == newCrop)
             {
+                Debug.Log("Deseleccionado: " + newCrop.crop.plantName);
                 selectCrop.btnImage.sprite = selectImg;
                 selectCrop.btnText.text = "Seleccionar";
                 selectCrop.btnText.alignment = TextAlignmentOptions.Center;
-
-                Crop = GameObject.Find(selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
-
-                Crop.fertilizanteSelec = false;
-                Crop.insecticidaSelec = false;
-                Crop.abonoSelec = false;
-                Crop.agriRegenerativa = false;
-                Crop.agriTradicional = false;
-                agri.desactivarAgri();
-                adicionales.desactivarOpciones();
+                selectCrop = null;
+                isPlanting = false;        
             }
+            else
+            {
+                if (selectCrop != null)
+                {
+                    selectCrop.btnImage.sprite = selectImg;
+                    selectCrop.btnText.text = "Seleccionar";
+                    selectCrop.btnText.alignment = TextAlignmentOptions.Center;
 
-            selectCrop = newCrop;
+                    Crop = GameObject.Find(selectCrop.crop.plantName).GetComponent<CrecimientoParalelo>();
 
-            selectCrop.btnImage.sprite = deselectImg;
-            selectCrop.btnText.text = "Cancelar";
-            selectCrop.btnText.alignment = TextAlignmentOptions.Bottom;
+                    Crop.fertilizanteSelec = false;
+                    Crop.insecticidaSelec = false;
+                    Crop.abonoSelec = false;
+                    Crop.agriRegenerativa = false;
+                    Crop.agriTradicional = false;
+                    agri.desactivarAgri();
+                    adicionales.desactivarOpciones();
+                }
 
-            isPlanting = true;
-            Debug.Log("Seleccionado: " + newCrop.crop.plantName);
+                selectCrop = newCrop;
+
+                selectCrop.btnImage.sprite = deselectImg;
+                selectCrop.btnText.text = "Cancelar";
+                selectCrop.btnText.alignment = TextAlignmentOptions.Bottom;
+
+                isPlanting = true;
+                Debug.Log("Seleccionado: " + newCrop.crop.plantName);
+            }
         }
     }
 }

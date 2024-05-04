@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Termians la Uni \n+8%"
+  m_text: "Terminas la Uni \n+8%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}
   m_sharedMaterial: {fileID: 7633180219064738749, guid: 2aa078f9db0dbef48a17839edba693f4, type: 2}

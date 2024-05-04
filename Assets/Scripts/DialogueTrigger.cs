@@ -253,7 +253,7 @@ public class DialogueTrigger : MonoBehaviour
     IEnumerator MostrarBoton()
     {
         yield return null;
-        if (nameText.text == "Verqor" && finan.prestamoUsado)
+        if (nameText.text == "Verqor" && finan.prestamoUsado && finan.Ver.enabled)
         {
             tiendaBtn.gameObject.SetActive(true);
         }

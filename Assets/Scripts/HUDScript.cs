@@ -136,8 +136,8 @@ public class HUDScript : MonoBehaviour
         else
         {
             tiempoCiclo = tiempoCiclo2;
-            numCiclos++;
             Debug.Log(numCiclos);
+            numCiclos++;
             clima.ChangeWeather(); // Cambiar clima cada ciclo
         }
     }
